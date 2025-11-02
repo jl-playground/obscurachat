@@ -15,8 +15,8 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 
 interface _GlobalComponents {
   'AppLogo': typeof import("../../app/components/AppLogo.vue")['default']
-  'Footer': typeof import("../../app/components/Footer.vue")['default']
-  'Header': typeof import("../../app/components/Header.vue")['default']
+  'FooterComponent': typeof import("../../app/components/FooterComponent.vue")['default']
+  'HeaderComponent': typeof import("../../app/components/HeaderComponent.vue")['default']
   'TemplateMenu': typeof import("../../app/components/TemplateMenu.vue")['default']
   'SectionsFeatureSection': typeof import("../../app/components/sections/FeatureSection.vue")['default']
   'SectionsIdeaSection': typeof import("../../app/components/sections/IdeaSection.vue")['default']
@@ -259,6 +259,8 @@ interface _GlobalComponents {
   'NuxtPicture': typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue")['default']
   'Icon': typeof import("../../node_modules/@nuxt/icon/dist/runtime/components/index")['default']
   'ColorScheme': typeof import("../../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
+  'NuxtLinkLocale': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']
+  'SwitchLocalePathLink': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']
   'NuxtPage': typeof import("../../node_modules/nuxt/dist/pages/runtime/page")['default']
   'NoScript': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['NoScript']
   'Link': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Link']
@@ -271,8 +273,8 @@ interface _GlobalComponents {
   'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Body']
   'NuxtIsland': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
   'LazyAppLogo': LazyComponent<typeof import("../../app/components/AppLogo.vue")['default']>
-  'LazyFooter': LazyComponent<typeof import("../../app/components/Footer.vue")['default']>
-  'LazyHeader': LazyComponent<typeof import("../../app/components/Header.vue")['default']>
+  'LazyFooterComponent': LazyComponent<typeof import("../../app/components/FooterComponent.vue")['default']>
+  'LazyHeaderComponent': LazyComponent<typeof import("../../app/components/HeaderComponent.vue")['default']>
   'LazyTemplateMenu': LazyComponent<typeof import("../../app/components/TemplateMenu.vue")['default']>
   'LazySectionsFeatureSection': LazyComponent<typeof import("../../app/components/sections/FeatureSection.vue")['default']>
   'LazySectionsIdeaSection': LazyComponent<typeof import("../../app/components/sections/IdeaSection.vue")['default']>
@@ -515,6 +517,8 @@ interface _GlobalComponents {
   'LazyNuxtPicture': LazyComponent<typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue")['default']>
   'LazyIcon': LazyComponent<typeof import("../../node_modules/@nuxt/icon/dist/runtime/components/index")['default']>
   'LazyColorScheme': LazyComponent<typeof import("../../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']>
+  'LazyNuxtLinkLocale': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']>
+  'LazySwitchLocalePathLink': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']>
   'LazyNuxtPage': LazyComponent<typeof import("../../node_modules/nuxt/dist/pages/runtime/page")['default']>
   'LazyNoScript': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['NoScript']>
   'LazyLink': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Link']>

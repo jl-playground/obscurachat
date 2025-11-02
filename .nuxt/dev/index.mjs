@@ -1,12 +1,12 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, getResponseStatus, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, getResponseStatusText } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, getResponseStatus, createError, getCookie, setCookie, removeResponseHeader, getQuery as getQuery$1, readBody, getRouterParam, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getResponseStatusText } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
 import { escapeHtml } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@vue/shared/dist/shared.cjs.js';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/ufo/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, joinRelativeURL, parsePath, withLeadingSlash, withTrailingSlash, decodePath, withoutTrailingSlash } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/ufo/dist/index.mjs';
 import destr, { destr as destr$1 } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/destr/dist/index.mjs';
 import { createHooks } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/hookable/dist/index.mjs';
 import { createFetch, Headers as Headers$1 } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/ofetch/dist/node.mjs';
@@ -15,7 +15,7 @@ import { createStorage, prefixStorage } from 'file:///Users/jldev/Projects/3-vps
 import unstorage_47drivers_47fs from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/unstorage/drivers/fs.mjs';
 import { digest, hash as hash$1 } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/ohash/dist/index.mjs';
 import { klona } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/klona/dist/index.mjs';
-import defu, { defuFn } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/defu/dist/defu.mjs';
+import defu, { defuFn, createDefu } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/defu/dist/defu.mjs';
 import { snakeCase } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/scule/dist/index.mjs';
 import { getContext } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/unctx/dist/index.mjs';
 import { toRouteMatcher, createRouter } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/radix3/dist/index.mjs';
@@ -24,6 +24,7 @@ import consola, { consola as consola$1 } from 'file:///Users/jldev/Projects/3-vp
 import { ErrorParser } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/youch-core/build/index.js';
 import { Youch } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/youch/build/index.js';
 import { SourceMapConsumer } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/source-map/source-map.js';
+import { createRouterMatcher } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/vue-router/vue-router.node.mjs';
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { stringify, uneval } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/devalue/index.js';
 import { captureRawStackTrace, parseRawStackTrace } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/errx/dist/index.js';
@@ -46,18 +47,18 @@ for (const asset of serverAssets) {
   assets$1.mount(asset.baseName, unstorage_47drivers_47fs({ base: asset.dir, ignore: (asset?.ignore || []) }));
 }
 
-const storage = createStorage({});
+const storage$1 = createStorage({});
 
-storage.mount('/assets', assets$1);
+storage$1.mount('/assets', assets$1);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/jldev/Projects/3-vps/obscurachat","watchOptions":{"ignored":[null]}}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/jldev/Projects/3-vps/obscurachat/server","watchOptions":{"ignored":[null]}}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/jldev/Projects/3-vps/obscurachat/.nuxt"}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/jldev/Projects/3-vps/obscurachat/.nuxt/cache"}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/Users/jldev/Projects/3-vps/obscurachat/.data/kv"}));
+storage$1.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/jldev/Projects/3-vps/obscurachat","watchOptions":{"ignored":[null]}}));
+storage$1.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/jldev/Projects/3-vps/obscurachat/server","watchOptions":{"ignored":[null]}}));
+storage$1.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/jldev/Projects/3-vps/obscurachat/.nuxt"}));
+storage$1.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/jldev/Projects/3-vps/obscurachat/.nuxt/cache"}));
+storage$1.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/Users/jldev/Projects/3-vps/obscurachat/.data/kv"}));
 
 function useStorage(base = "") {
-  return base ? prefixStorage(storage, base) : storage;
+  return base ? prefixStorage(storage$1, base) : storage$1;
 }
 
 const Hasher = /* @__PURE__ */ (() => {
@@ -918,7 +919,78 @@ const _inlineRuntimeConfig = {
       }
     }
   },
-  "public": {},
+  "public": {
+    "i18n": {
+      "baseUrl": "",
+      "defaultLocale": "en",
+      "rootRedirect": "",
+      "redirectStatusCode": 302,
+      "skipSettingLocaleOnNavigate": false,
+      "locales": [
+        {
+          "code": "en",
+          "iso": "en-US",
+          "name": "English",
+          "language": ""
+        },
+        {
+          "code": "de",
+          "iso": "de-DE",
+          "name": "Deutsch",
+          "language": ""
+        },
+        {
+          "code": "fr",
+          "iso": "fr-FR",
+          "name": "Français",
+          "language": ""
+        },
+        {
+          "code": "it",
+          "iso": "it-IT",
+          "name": "Italiano",
+          "language": ""
+        }
+      ],
+      "detectBrowserLanguage": {
+        "alwaysRedirect": true,
+        "cookieCrossOrigin": false,
+        "cookieDomain": "",
+        "cookieKey": "obscura_i18n_redirected",
+        "cookieSecure": false,
+        "fallbackLocale": "en",
+        "redirectOn": "root",
+        "useCookie": true
+      },
+      "experimental": {
+        "localeDetector": "",
+        "typedPages": true,
+        "typedOptionsAndMessages": false,
+        "alternateLinkCanonicalQueries": true,
+        "devCache": false,
+        "cacheLifetime": "",
+        "stripMessagesPayload": false,
+        "preload": false,
+        "strictSeo": false,
+        "nitroContextDetection": true,
+        "httpCacheDuration": 10
+      },
+      "domainLocales": {
+        "en": {
+          "domain": ""
+        },
+        "de": {
+          "domain": ""
+        },
+        "fr": {
+          "domain": ""
+        },
+        "it": {
+          "domain": ""
+        }
+      }
+    }
+  },
   "icon": {
     "serverKnownCssClasses": []
   },
@@ -1646,7 +1718,425 @@ const _FhPuZFReeAKOJscqjKBeDSwh9DwOoslhAtaNKDlRY2o = (function(nitro) {
   });
 });
 
-const rootDir = "/Users/jldev/Projects/3-vps/obscurachat";
+/*!
+  * shared v11.1.12
+  * (c) 2025 kazuya kawaguchi
+  * Released under the MIT License.
+  */
+const _create = Object.create;
+const create = (obj = null) => _create(obj);
+/* eslint-enable */
+/**
+ * Useful Utilities By Evan you
+ * Modified by kazuya kawaguchi
+ * MIT License
+ * https://github.com/vuejs/vue-next/blob/master/packages/shared/src/index.ts
+ * https://github.com/vuejs/vue-next/blob/master/packages/shared/src/codeframe.ts
+ */
+const isArray = Array.isArray;
+const isFunction = (val) => typeof val === 'function';
+const isString = (val) => typeof val === 'string';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const isObject = (val) => val !== null && typeof val === 'object';
+const objectToString = Object.prototype.toString;
+const toTypeString = (value) => objectToString.call(value);
+
+const isNotObjectOrIsArray = (val) => !isObject(val) || isArray(val);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function deepCopy(src, des) {
+    // src and des should both be objects, and none of them can be a array
+    if (isNotObjectOrIsArray(src) || isNotObjectOrIsArray(des)) {
+        throw new Error('Invalid value');
+    }
+    const stack = [{ src, des }];
+    while (stack.length) {
+        const { src, des } = stack.pop();
+        // using `Object.keys` which skips prototype properties
+        Object.keys(src).forEach(key => {
+            if (key === '__proto__') {
+                return;
+            }
+            // if src[key] is an object/array, set des[key]
+            // to empty object/array to prevent setting by reference
+            if (isObject(src[key]) && !isObject(des[key])) {
+                des[key] = Array.isArray(src[key]) ? [] : create();
+            }
+            if (isNotObjectOrIsArray(des[key]) || isNotObjectOrIsArray(src[key])) {
+                // replace with src[key] when:
+                // src[key] or des[key] is not an object, or
+                // src[key] or des[key] is an array
+                des[key] = src[key];
+            }
+            else {
+                // src[key] and des[key] are both objects, merge them
+                stack.push({ src: src[key], des: des[key] });
+            }
+        });
+    }
+}
+
+const __nuxtMock = { runWithContext: async (fn) => await fn() };
+const merger = createDefu((obj, key, value) => {
+  if (key === "messages" || key === "datetimeFormats" || key === "numberFormats") {
+    obj[key] ??= create(null);
+    deepCopy(value, obj[key]);
+    return true;
+  }
+});
+async function loadVueI18nOptions(vueI18nConfigs) {
+  const nuxtApp = __nuxtMock;
+  let vueI18nOptions = { messages: create(null) };
+  for (const configFile of vueI18nConfigs) {
+    const resolver = await configFile().then((x) => x.default);
+    const resolved = isFunction(resolver) ? await nuxtApp.runWithContext(() => resolver()) : resolver;
+    vueI18nOptions = merger(create(null), resolved, vueI18nOptions);
+  }
+  vueI18nOptions.fallbackLocale ??= false;
+  return vueI18nOptions;
+}
+const isModule = (val) => toTypeString(val) === "[object Module]";
+const isResolvedModule = (val) => isModule(val) || true;
+async function getLocaleMessages(locale, loader) {
+  const nuxtApp = __nuxtMock;
+  try {
+    const getter = await nuxtApp.runWithContext(loader.load).then((x) => isResolvedModule(x) ? x.default : x);
+    return isFunction(getter) ? await nuxtApp.runWithContext(() => getter(locale)) : getter;
+  } catch (e) {
+    throw new Error(`Failed loading locale (${locale}): ` + e.message);
+  }
+}
+async function getLocaleMessagesMerged(locale, loaders = []) {
+  const nuxtApp = __nuxtMock;
+  const merged = {};
+  for (const loader of loaders) {
+    deepCopy(await nuxtApp.runWithContext(async () => await getLocaleMessages(locale, loader)), merged);
+  }
+  return merged;
+}
+
+// @ts-nocheck
+const localeCodes =  [
+  "en",
+  "de",
+  "fr",
+  "it"
+];
+const localeLoaders = {
+  en: [
+    {
+      key: "locale_en_46json_cb73597a",
+      load: () => Promise.resolve().then(function () { return en$1; }),
+      cache: true
+    }
+  ],
+  de: [
+    {
+      key: "locale_de_46json_1ae89d13",
+      load: () => Promise.resolve().then(function () { return de$1; }),
+      cache: true
+    }
+  ],
+  fr: [
+    {
+      key: "locale_fr_46json_8b0ecc89",
+      load: () => Promise.resolve().then(function () { return fr$1; }),
+      cache: true
+    }
+  ],
+  it: [
+    {
+      key: "locale_it_46json_9b9a08af",
+      load: () => Promise.resolve().then(function () { return it$1; }),
+      cache: true
+    }
+  ]
+};
+const vueI18nConfigs = [];
+const normalizedLocales = [
+  {
+    code: "en",
+    iso: "en-US",
+    name: "English",
+    language: undefined
+  },
+  {
+    code: "de",
+    iso: "de-DE",
+    name: "Deutsch",
+    language: undefined
+  },
+  {
+    code: "fr",
+    iso: "fr-FR",
+    name: "Français",
+    language: undefined
+  },
+  {
+    code: "it",
+    iso: "it-IT",
+    name: "Italiano",
+    language: undefined
+  }
+];
+
+const setupVueI18nOptions = async (defaultLocale) => {
+  const options = await loadVueI18nOptions(vueI18nConfigs);
+  options.locale = defaultLocale || options.locale || "en-US";
+  options.defaultLocale = defaultLocale;
+  options.fallbackLocale ??= false;
+  options.messages ??= {};
+  for (const locale of localeCodes) {
+    options.messages[locale] ??= {};
+  }
+  return options;
+};
+
+function defineNitroPlugin(def) {
+  return def;
+}
+
+function defineRenderHandler(render) {
+  const runtimeConfig = useRuntimeConfig();
+  return eventHandler(async (event) => {
+    const nitroApp = useNitroApp();
+    const ctx = { event, render, response: void 0 };
+    await nitroApp.hooks.callHook("render:before", ctx);
+    if (!ctx.response) {
+      if (event.path === `${runtimeConfig.app.baseURL}favicon.ico`) {
+        setResponseHeader(event, "Content-Type", "image/x-icon");
+        return send(
+          event,
+          "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        );
+      }
+      ctx.response = await ctx.render(event);
+      if (!ctx.response) {
+        const _currentStatus = getResponseStatus(event);
+        setResponseStatus(event, _currentStatus === 200 ? 500 : _currentStatus);
+        return send(
+          event,
+          "No response returned from render handler: " + event.path
+        );
+      }
+    }
+    await nitroApp.hooks.callHook("render:response", ctx.response, ctx);
+    if (ctx.response.headers) {
+      setResponseHeaders(event, ctx.response.headers);
+    }
+    if (ctx.response.statusCode || ctx.response.statusMessage) {
+      setResponseStatus(
+        event,
+        ctx.response.statusCode,
+        ctx.response.statusMessage
+      );
+    }
+    return ctx.response.body;
+  });
+}
+
+const scheduledTasks = false;
+
+const tasks = {
+  
+};
+
+const __runningTasks__ = {};
+async function runTask(name, {
+  payload = {},
+  context = {}
+} = {}) {
+  if (__runningTasks__[name]) {
+    return __runningTasks__[name];
+  }
+  if (!(name in tasks)) {
+    throw createError({
+      message: `Task \`${name}\` is not available!`,
+      statusCode: 404
+    });
+  }
+  if (!tasks[name].resolve) {
+    throw createError({
+      message: `Task \`${name}\` is not implemented!`,
+      statusCode: 501
+    });
+  }
+  const handler = await tasks[name].resolve();
+  const taskEvent = { name, payload, context };
+  __runningTasks__[name] = handler.run(taskEvent);
+  try {
+    const res = await __runningTasks__[name];
+    return res;
+  } finally {
+    delete __runningTasks__[name];
+  }
+}
+
+function buildAssetsDir() {
+  return useRuntimeConfig().app.buildAssetsDir;
+}
+function buildAssetsURL(...path) {
+  return joinRelativeURL(publicAssetsURL(), buildAssetsDir(), ...path);
+}
+function publicAssetsURL(...path) {
+  const app = useRuntimeConfig().app;
+  const publicBase = app.cdnURL || app.baseURL;
+  return path.length ? joinRelativeURL(publicBase, ...path) : publicBase;
+}
+
+function parseAcceptLanguage(value) {
+  return value.split(",").map((tag) => tag.split(";")[0]).filter(
+    (tag) => !(tag === "*" || tag === "")
+  );
+}
+function createPathIndexLanguageParser(index = 0) {
+  return (path) => {
+    const rawPath = typeof path === "string" ? path : path.pathname;
+    const normalizedPath = rawPath.split("?")[0];
+    const parts = normalizedPath.split("/");
+    if (parts[0] === "") {
+      parts.shift();
+    }
+    return parts.length > index ? parts[index] || "" : "";
+  };
+}
+
+function useRuntimeI18n(nuxtApp, event) {
+  {
+    return useRuntimeConfig(event).public.i18n;
+  }
+}
+function useI18nDetection(nuxtApp) {
+  const detectBrowserLanguage = useRuntimeI18n().detectBrowserLanguage;
+  const detect = detectBrowserLanguage || {};
+  return {
+    ...detect,
+    enabled: !!detectBrowserLanguage,
+    cookieKey: detect.cookieKey || "i18n_redirected"
+  };
+}
+function resolveRootRedirect(config) {
+  if (!config) {
+    return void 0;
+  }
+  return {
+    path: "/" + (isString(config) ? config : config.path).replace(/^\//, ""),
+    code: !isString(config) && config.statusCode || 302
+  };
+}
+function toArray(value) {
+  return Array.isArray(value) ? value : [value];
+}
+
+function createLocaleConfigs(fallbackLocale) {
+  const localeConfigs = {};
+  for (const locale of localeCodes) {
+    const fallbacks = getFallbackLocaleCodes(fallbackLocale, [locale]);
+    const cacheable = isLocaleWithFallbacksCacheable(locale, fallbacks);
+    localeConfigs[locale] = { fallbacks, cacheable };
+  }
+  return localeConfigs;
+}
+function getFallbackLocaleCodes(fallback, locales) {
+  if (fallback === false) {
+    return [];
+  }
+  if (isArray(fallback)) {
+    return fallback;
+  }
+  let fallbackLocales = [];
+  if (isString(fallback)) {
+    if (locales.every((locale) => locale !== fallback)) {
+      fallbackLocales.push(fallback);
+    }
+    return fallbackLocales;
+  }
+  const targets = [...locales, "default"];
+  for (const locale of targets) {
+    if (locale in fallback == false) {
+      continue;
+    }
+    fallbackLocales = [...fallbackLocales, ...fallback[locale].filter(Boolean)];
+  }
+  return fallbackLocales;
+}
+function isLocaleCacheable(locale) {
+  return localeLoaders[locale] != null && localeLoaders[locale].every((loader) => loader.cache !== false);
+}
+function isLocaleWithFallbacksCacheable(locale, fallbackLocales) {
+  return isLocaleCacheable(locale) && fallbackLocales.every((fallbackLocale) => isLocaleCacheable(fallbackLocale));
+}
+function getDefaultLocaleForDomain(host) {
+  return normalizedLocales.find((l) => !!l.defaultForDomains?.includes(host))?.code;
+}
+const isSupportedLocale = (locale) => localeCodes.includes(locale || "");
+
+function useI18nContext(event) {
+  if (event.context.nuxtI18n == null) {
+    throw new Error("Nuxt I18n server context has not been set up yet.");
+  }
+  return event.context.nuxtI18n;
+}
+function tryUseI18nContext(event) {
+  return event.context.nuxtI18n;
+}
+const getHost = (event) => getRequestURL(event, { xForwardedHost: true }).host;
+async function initializeI18nContext(event) {
+  const runtimeI18n = useRuntimeI18n(void 0, event);
+  const defaultLocale = runtimeI18n.defaultLocale || "";
+  const options = await setupVueI18nOptions(getDefaultLocaleForDomain(getHost(event)) || defaultLocale);
+  const localeConfigs = createLocaleConfigs(options.fallbackLocale);
+  const ctx = createI18nContext();
+  ctx.vueI18nOptions = options;
+  ctx.localeConfigs = localeConfigs;
+  event.context.nuxtI18n = ctx;
+  return ctx;
+}
+function createI18nContext() {
+  return {
+    messages: {},
+    slp: {},
+    localeConfigs: {},
+    trackMap: {},
+    vueI18nOptions: void 0,
+    trackKey(key, locale) {
+      this.trackMap[locale] ??= /* @__PURE__ */ new Set();
+      this.trackMap[locale].add(key);
+    }
+  };
+}
+
+function matchBrowserLocale(locales, browserLocales) {
+  const matchedLocales = [];
+  for (const [index, browserCode] of browserLocales.entries()) {
+    const matchedLocale = locales.find((l) => l.language?.toLowerCase() === browserCode.toLowerCase());
+    if (matchedLocale) {
+      matchedLocales.push({ code: matchedLocale.code, score: 1 - index / browserLocales.length });
+      break;
+    }
+  }
+  for (const [index, browserCode] of browserLocales.entries()) {
+    const languageCode = browserCode.split("-")[0].toLowerCase();
+    const matchedLocale = locales.find((l) => l.language?.split("-")[0].toLowerCase() === languageCode);
+    if (matchedLocale) {
+      matchedLocales.push({ code: matchedLocale.code, score: 0.999 - index / browserLocales.length });
+      break;
+    }
+  }
+  return matchedLocales;
+}
+function compareBrowserLocale(a, b) {
+  if (a.score === b.score) {
+    return b.code.length - a.code.length;
+  }
+  return b.score - a.score;
+}
+function findBrowserLocale(locales, browserLocales) {
+  const matchedLocales = matchBrowserLocale(
+    locales.map((l) => ({ code: l.code, language: l.language || l.code })),
+    browserLocales
+  );
+  return matchedLocales.sort(compareBrowserLocale).at(0)?.code ?? "";
+}
 
 const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
 
@@ -1663,6 +2153,228 @@ const appSpaLoaderTag = "div";
 const appSpaLoaderAttrs = {"id":"__nuxt-loader"};
 
 const appId = "nuxt-app";
+
+const separator = "___";
+const pathLanguageParser = createPathIndexLanguageParser(0);
+const getLocaleFromRoutePath = (path) => pathLanguageParser(path);
+const getLocaleFromRouteName = (name) => name.split(separator).at(1) ?? "";
+function normalizeInput(input) {
+  return typeof input !== "object" ? String(input) : String(input?.name || input?.path || "");
+}
+function getLocaleFromRoute(route) {
+  const input = normalizeInput(route);
+  return input[0] === "/" ? getLocaleFromRoutePath(input) : getLocaleFromRouteName(input);
+}
+
+function matchDomainLocale(locales, host, pathLocale) {
+  const normalizeDomain = (domain = "") => domain.replace(/https?:\/\//, "");
+  const matches = locales.filter(
+    (locale) => normalizeDomain(locale.domain) === host || toArray(locale.domains).includes(host)
+  );
+  if (matches.length <= 1) {
+    return matches[0]?.code;
+  }
+  return (
+    // match by current path locale
+    matches.find((l) => l.code === pathLocale)?.code || matches.find((l) => l.defaultForDomains?.includes(host) ?? l.domainDefault)?.code
+  );
+}
+
+const getCookieLocale = (event, cookieName) => (getCookie(event, cookieName)) || void 0;
+const getRouteLocale = (event, route) => getLocaleFromRoute(route);
+const getHeaderLocale = (event) => findBrowserLocale(normalizedLocales, parseAcceptLanguage(getRequestHeader(event, "accept-language") || ""));
+const getHostLocale = (event, path, domainLocales) => {
+  const host = getRequestURL(event, { xForwardedHost: true }).host;
+  const locales = normalizedLocales.map((l) => ({
+    ...l,
+    domain: domainLocales[l.code]?.domain ?? l.domain
+  }));
+  return matchDomainLocale(locales, host, getLocaleFromRoutePath(path));
+};
+const useDetectors = (event, config, nuxtApp) => {
+  if (!event) {
+    throw new Error("H3Event is required for server-side locale detection");
+  }
+  const runtimeI18n = useRuntimeI18n();
+  return {
+    cookie: () => getCookieLocale(event, config.cookieKey),
+    header: () => getHeaderLocale(event) ,
+    navigator: () => void 0,
+    host: (path) => getHostLocale(event, path, runtimeI18n.domainLocales),
+    route: (path) => getRouteLocale(event, path)
+  };
+};
+
+// Generated by @nuxtjs/i18n
+const pathToI18nConfig = {
+  "/": {
+    "en": "/",
+    "de": "/",
+    "fr": "/",
+    "it": "/"
+  }
+};
+const i18nPathToPath = {
+  "/": "/"
+};
+
+const matcher = createRouterMatcher([], {});
+for (const path of Object.keys(i18nPathToPath)) {
+  matcher.addRoute({ path, component: () => "", meta: {} });
+}
+const getI18nPathToI18nPath = (path, locale) => {
+  if (!path || !locale) {
+    return;
+  }
+  const plainPath = i18nPathToPath[path];
+  const i18nConfig = pathToI18nConfig[plainPath];
+  if (i18nConfig && i18nConfig[locale]) {
+    return i18nConfig[locale] === true ? plainPath : i18nConfig[locale];
+  }
+};
+function isExistingNuxtRoute(path) {
+  if (path === "") {
+    return;
+  }
+  const resolvedMatch = matcher.resolve({ path }, { path: "/", name: "", matched: [], params: {}, meta: {} });
+  return resolvedMatch.matched.length > 0 ? resolvedMatch : void 0;
+}
+function matchLocalized(path, locale, defaultLocale) {
+  if (path === "") {
+    return;
+  }
+  const parsed = parsePath(path);
+  const resolvedMatch = matcher.resolve(
+    { path: parsed.pathname || "/" },
+    { path: "/", name: "", matched: [], params: {}, meta: {} }
+  );
+  if (resolvedMatch.matched.length > 0) {
+    const alternate = getI18nPathToI18nPath(resolvedMatch.matched[0].path, locale);
+    const match = matcher.resolve(
+      { params: resolvedMatch.params },
+      { path: alternate || "/", name: "", matched: [], params: {}, meta: {} }
+    );
+    const isPrefixable = prefixable(locale, defaultLocale);
+    return withLeadingSlash(joinURL(isPrefixable ? locale : "", match.path));
+  }
+}
+function prefixable(currentLocale, defaultLocale) {
+  return (currentLocale !== defaultLocale || "prefix_except_default" === "prefix");
+}
+
+function* detect(detectors, detection, path) {
+  if (detection.enabled) {
+    yield { locale: detectors.cookie(), source: "cookie" };
+    yield { locale: detectors.header(), source: "header" };
+  }
+  {
+    yield { locale: detectors.route(path), source: "route" };
+  }
+  yield { locale: detection.fallbackLocale, source: "fallback" };
+}
+const _W1tmybEtptemofCAfPdUgOHxNUINqP0DWuGTROgjBqY = defineNitroPlugin(async (nitro) => {
+  const runtimeI18n = useRuntimeI18n();
+  const rootRedirect = resolveRootRedirect(runtimeI18n.rootRedirect);
+  runtimeI18n.defaultLocale || "";
+  try {
+    const cacheStorage = useStorage("cache");
+    const cachedKeys = await cacheStorage.getKeys("nitro:handlers:i18n");
+    await Promise.all(cachedKeys.map((key) => cacheStorage.removeItem(key)));
+  } catch {
+  }
+  const detection = useI18nDetection();
+  const cookieOptions = {
+    path: "/",
+    domain: detection.cookieDomain || void 0,
+    maxAge: 60 * 60 * 24 * 365,
+    sameSite: "lax",
+    secure: detection.cookieSecure
+  };
+  const createBaseUrlGetter = () => {
+    isFunction(runtimeI18n.baseUrl) ? "" : runtimeI18n.baseUrl || "";
+    if (isFunction(runtimeI18n.baseUrl)) {
+      console.warn("[nuxt-i18n] Configuring baseUrl as a function is deprecated and will be removed in v11.");
+      return () => "";
+    }
+    return (event, defaultLocale) => {
+      return "";
+    };
+  };
+  function resolveRedirectPath(event, path, pathLocale, defaultLocale, detector) {
+    let locale = "";
+    for (const detected of detect(detector, detection, event.path)) {
+      if (detected.locale && isSupportedLocale(detected.locale)) {
+        locale = detected.locale;
+        break;
+      }
+    }
+    locale ||= defaultLocale;
+    function getLocalizedMatch(locale2) {
+      const res = matchLocalized(path || "/", locale2, defaultLocale);
+      if (res && res !== event.path) {
+        return res;
+      }
+    }
+    let resolvedPath = void 0;
+    let redirectCode = 302;
+    const requestURL = getRequestURL(event);
+    if (rootRedirect && requestURL.pathname === "/") {
+      locale = detection.enabled && locale || defaultLocale;
+      resolvedPath = isSupportedLocale(detector.route(rootRedirect.path)) && rootRedirect.path || matchLocalized(rootRedirect.path, locale, defaultLocale);
+      redirectCode = rootRedirect.code;
+    } else if (runtimeI18n.redirectStatusCode) {
+      redirectCode = runtimeI18n.redirectStatusCode;
+    }
+    switch (detection.redirectOn) {
+      case "root":
+        if (requestURL.pathname !== "/") {
+          break;
+        }
+      // fallthrough (root has no prefix)
+      case "no prefix":
+        if (pathLocale) {
+          break;
+        }
+      // fallthrough to resolve
+      case "all":
+        resolvedPath ??= getLocalizedMatch(locale);
+        break;
+    }
+    if (requestURL.pathname === "/" && "prefix_except_default" === "prefix") ;
+    return { path: resolvedPath, code: redirectCode, locale };
+  }
+  const baseUrlGetter = createBaseUrlGetter();
+  nitro.hooks.hook("request", async (event) => {
+    await initializeI18nContext(event);
+  });
+  nitro.hooks.hook("render:before", async ({ event }) => {
+    const ctx = useI18nContext(event);
+    const url = getRequestURL(event);
+    const detector = useDetectors(event, detection);
+    const localeSegment = detector.route(event.path);
+    const pathLocale = isSupportedLocale(localeSegment) && localeSegment || void 0;
+    const path = (pathLocale && url.pathname.slice(pathLocale.length + 1)) ?? url.pathname;
+    if (!url.pathname.includes("/_i18n/T4Nc8fmJ") && !isExistingNuxtRoute(path)) {
+      return;
+    }
+    const resolved = resolveRedirectPath(event, path, pathLocale, ctx.vueI18nOptions.defaultLocale, detector);
+    if (resolved.path && resolved.path !== url.pathname) {
+      ctx.detectLocale = resolved.locale;
+      detection.useCookie && setCookie(event, detection.cookieKey, resolved.locale, cookieOptions);
+      await sendRedirect(
+        event,
+        joinURL(baseUrlGetter(event, ctx.vueI18nOptions.defaultLocale), resolved.path + url.search),
+        resolved.code
+      );
+      return;
+    }
+  });
+  nitro.hooks.hook("render:html", (htmlContext, { event }) => {
+    tryUseI18nContext(event);
+  });
+});
+
+const rootDir = "/Users/jldev/Projects/3-vps/obscurachat";
 
 const devReducers = {
   VNode: (data) => isVNode(data) ? { type: data.type, props: data.props } : void 0,
@@ -1748,6 +2460,7 @@ const _3Nx0MWWaAIOhB0bkW6TYvqcTGFViij_5jX0rR4qrSLY = (function(nitro) {
 
 const plugins = [
   _FhPuZFReeAKOJscqjKBeDSwh9DwOoslhAtaNKDlRY2o,
+_W1tmybEtptemofCAfPdUgOHxNUINqP0DWuGTROgjBqY,
 _P_lyOtCp507OIHiPSaNcOlKoxjGG0v0_fPQCXTZlV8w,
 _3Nx0MWWaAIOhB0bkW6TYvqcTGFViij_5jX0rR4qrSLY
 ];
@@ -1897,18 +2610,6 @@ function setSSRError(ssrContext, error) {
   ssrContext.error = true;
   ssrContext.payload = { error };
   ssrContext.url = error.url;
-}
-
-function buildAssetsDir() {
-  return useRuntimeConfig().app.buildAssetsDir;
-}
-function buildAssetsURL(...path) {
-  return joinRelativeURL(publicAssetsURL(), buildAssetsDir(), ...path);
-}
-function publicAssetsURL(...path) {
-  const app = useRuntimeConfig().app;
-  const publicBase = app.cdnURL || app.baseURL;
-  return path.length ? joinRelativeURL(publicBase, ...path) : publicBase;
 }
 
 const APP_ROOT_OPEN_TAG = `<${appRootTag}${propsToString(appRootAttrs)}>`;
@@ -2162,82 +2863,6 @@ async function getIslandContext(event) {
   return ctx;
 }
 
-function defineRenderHandler(render) {
-  const runtimeConfig = useRuntimeConfig();
-  return eventHandler(async (event) => {
-    const nitroApp = useNitroApp();
-    const ctx = { event, render, response: void 0 };
-    await nitroApp.hooks.callHook("render:before", ctx);
-    if (!ctx.response) {
-      if (event.path === `${runtimeConfig.app.baseURL}favicon.ico`) {
-        setResponseHeader(event, "Content-Type", "image/x-icon");
-        return send(
-          event,
-          "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-        );
-      }
-      ctx.response = await ctx.render(event);
-      if (!ctx.response) {
-        const _currentStatus = getResponseStatus(event);
-        setResponseStatus(event, _currentStatus === 200 ? 500 : _currentStatus);
-        return send(
-          event,
-          "No response returned from render handler: " + event.path
-        );
-      }
-    }
-    await nitroApp.hooks.callHook("render:response", ctx.response, ctx);
-    if (ctx.response.headers) {
-      setResponseHeaders(event, ctx.response.headers);
-    }
-    if (ctx.response.statusCode || ctx.response.statusMessage) {
-      setResponseStatus(
-        event,
-        ctx.response.statusCode,
-        ctx.response.statusMessage
-      );
-    }
-    return ctx.response.body;
-  });
-}
-
-const scheduledTasks = false;
-
-const tasks = {
-  
-};
-
-const __runningTasks__ = {};
-async function runTask(name, {
-  payload = {},
-  context = {}
-} = {}) {
-  if (__runningTasks__[name]) {
-    return __runningTasks__[name];
-  }
-  if (!(name in tasks)) {
-    throw createError({
-      message: `Task \`${name}\` is not available!`,
-      statusCode: 404
-    });
-  }
-  if (!tasks[name].resolve) {
-    throw createError({
-      message: `Task \`${name}\` is not implemented!`,
-      statusCode: 501
-    });
-  }
-  const handler = await tasks[name].resolve();
-  const taskEvent = { name, payload, context };
-  __runningTasks__[name] = handler.run(taskEvent);
-  try {
-    const res = await __runningTasks__[name];
-    return res;
-  } finally {
-    delete __runningTasks__[name];
-  }
-}
-
 const warnOnceSet = /* @__PURE__ */ new Set();
 const DEFAULT_ENDPOINT = "https://api.iconify.design";
 const _owA577 = defineCachedEventHandler(async (event) => {
@@ -2298,6 +2923,123 @@ const _owA577 = defineCachedEventHandler(async (event) => {
   // 1 week
 });
 
+const storage = prefixStorage(useStorage(), "i18n");
+function cachedFunctionI18n(fn, opts) {
+  opts = { maxAge: 1, ...opts };
+  const pending = {};
+  async function get(key, resolver) {
+    const isPending = pending[key];
+    if (!isPending) {
+      pending[key] = Promise.resolve(resolver());
+    }
+    try {
+      return await pending[key];
+    } finally {
+      delete pending[key];
+    }
+  }
+  return async (...args) => {
+    const key = [opts.name, opts.getKey(...args)].join(":").replace(/:\/$/, ":index");
+    const maxAge = opts.maxAge ?? 1;
+    const isCacheable = !opts.shouldBypassCache(...args) && maxAge >= 0;
+    const cache = isCacheable && await storage.getItemRaw(key);
+    if (!cache || cache.ttl < Date.now()) {
+      pending[key] = Promise.resolve(fn(...args));
+      const value = await get(key, () => fn(...args));
+      if (isCacheable) {
+        await storage.setItemRaw(key, { ttl: Date.now() + maxAge * 1e3, value, mtime: Date.now() });
+      }
+      return value;
+    }
+    return cache.value;
+  };
+}
+
+const _getMessages = async (locale) => {
+  return { [locale]: await getLocaleMessagesMerged(locale, localeLoaders[locale]) };
+};
+cachedFunctionI18n(_getMessages, {
+  name: "messages",
+  maxAge: -1 ,
+  getKey: (locale) => locale,
+  shouldBypassCache: (locale) => !isLocaleCacheable(locale)
+});
+const getMessages = _getMessages ;
+const _getMergedMessages = async (locale, fallbackLocales) => {
+  const merged = {};
+  try {
+    if (fallbackLocales.length > 0) {
+      const messages = await Promise.all(fallbackLocales.map(getMessages));
+      for (const message2 of messages) {
+        deepCopy(message2, merged);
+      }
+    }
+    const message = await getMessages(locale);
+    deepCopy(message, merged);
+    return merged;
+  } catch (e) {
+    throw new Error("Failed to merge messages: " + e.message);
+  }
+};
+const getMergedMessages = cachedFunctionI18n(_getMergedMessages, {
+  name: "merged-single",
+  maxAge: -1 ,
+  getKey: (locale, fallbackLocales) => `${locale}-[${[...new Set(fallbackLocales)].sort().join("-")}]`,
+  shouldBypassCache: (locale, fallbackLocales) => !isLocaleWithFallbacksCacheable(locale, fallbackLocales)
+});
+const _getAllMergedMessages = async (locales) => {
+  const merged = {};
+  try {
+    const messages = await Promise.all(locales.map(getMessages));
+    for (const message of messages) {
+      deepCopy(message, merged);
+    }
+    return merged;
+  } catch (e) {
+    throw new Error("Failed to merge messages: " + e.message);
+  }
+};
+cachedFunctionI18n(_getAllMergedMessages, {
+  name: "merged-all",
+  maxAge: -1 ,
+  getKey: (locales) => locales.join("-"),
+  shouldBypassCache: (locales) => !locales.every((locale) => isLocaleCacheable(locale))
+});
+
+const _messagesHandler = defineEventHandler(async (event) => {
+  const locale = getRouterParam(event, "locale");
+  if (!locale) {
+    throw createError({ status: 400, message: "Locale not specified." });
+  }
+  const ctx = useI18nContext(event);
+  if (ctx.localeConfigs && locale in ctx.localeConfigs === false) {
+    throw createError({ status: 404, message: `Locale '${locale}' not found.` });
+  }
+  const messages = await getMergedMessages(locale, ctx.localeConfigs?.[locale]?.fallbacks ?? []);
+  deepCopy(messages, ctx.messages);
+  return ctx.messages;
+});
+const _cachedMessageLoader = defineCachedFunction(_messagesHandler, {
+  name: "i18n:messages-internal",
+  maxAge: -1 ,
+  getKey: (event) => [getRouterParam(event, "locale") ?? "null", getRouterParam(event, "hash") ?? "null"].join("-"),
+  async shouldBypassCache(event) {
+    const locale = getRouterParam(event, "locale");
+    if (locale == null) {
+      return false;
+    }
+    const ctx = tryUseI18nContext(event) || await initializeI18nContext(event);
+    return !ctx.localeConfigs?.[locale]?.cacheable;
+  }
+});
+defineCachedEventHandler(_cachedMessageLoader, {
+  name: "i18n:messages",
+  maxAge: -1 ,
+  swr: false,
+  getKey: (event) => [getRouterParam(event, "locale") ?? "null", getRouterParam(event, "hash") ?? "null"].join("-")
+});
+const _MzfcpU = _messagesHandler ;
+
 const _sLTsJm = lazyEventHandler(() => {
   const opts = useRuntimeConfig().ipx || {};
   const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
@@ -2323,6 +3065,7 @@ const handlers = [
   { route: '/__nuxt_error', handler: _lazy_w5Fm1z, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
   { route: '/api/_nuxt_icon/:collection', handler: _owA577, lazy: false, middleware: false, method: undefined },
+  { route: '/_i18n/:hash/:locale/messages.json', handler: _MzfcpU, lazy: false, middleware: false, method: undefined },
   { route: '/_ipx/**', handler: _sLTsJm, lazy: false, middleware: false, method: undefined },
   { route: '/_fonts/**', handler: _lazy_w5Fm1z, lazy: true, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_w5Fm1z, lazy: true, middleware: false, method: undefined }
@@ -2564,6 +3307,194 @@ const template$1 = (messages) => {
 const error500 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   template: template$1
+}, Symbol.toStringTag, { value: 'Module' }));
+
+var nav$3 = {
+	how: "How It Works",
+	philosophy: "Philosophy",
+	waitlist: "Join Waitlist"
+};
+var hero$3 = {
+	title: "Connection first. Appearance second.",
+	subtitle: "Obscura is the dating app for those who value chemistry over cliché. Start with a conversation, not just a photo.",
+	cta: "Join the Waitlist"
+};
+var how_it_works$3 = {
+	title: "Your Journey to a Real Connection",
+	step1_title: "1. Start with a Silhouette",
+	step1_desc: "Your profile shows your personality, your passions, and your prompts. Your photos remain fully blurred.",
+	step2_title: "2. Receive Curated Matches",
+	step2_desc: "No endless swiping. Our AI provides a small batch of compatible profiles based on shared values.",
+	step3_title: "3. Connect in the Chat",
+	step3_desc: "Use text and voice messages to discover their personality. Chemistry is built here, not from a picture.",
+	step4_title: "4. The Mutual Reveal",
+	step4_desc: "After a connection is made (e.g., 50 messages), you can both agree to reveal your photos. It's a mutual decision."
+};
+var philosophy$3 = {
+	title: "Depth Over Swiping",
+	text: "We're slowing down dating. Obscura is a space for authentic, curious, and patient individuals who believe a real connection starts with the mind and heart. We are the antidote to superficial swipe culture."
+};
+var footer$3 = {
+	copyright: "© 2025 Obscura. All rights reserved.",
+	links: "Privacy | Terms"
+};
+const en = {
+	nav: nav$3,
+	hero: hero$3,
+	how_it_works: how_it_works$3,
+	philosophy: philosophy$3,
+	footer: footer$3
+};
+
+const en$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: en,
+  footer: footer$3,
+  hero: hero$3,
+  how_it_works: how_it_works$3,
+  nav: nav$3,
+  philosophy: philosophy$3
+}, Symbol.toStringTag, { value: 'Module' }));
+
+var nav$2 = {
+	how: "So funktioniert's",
+	philosophy: "Philosophie",
+	waitlist: "Zur Warteliste"
+};
+var hero$2 = {
+	title: "Verbindung zuerst. Aussehen zweitrangig.",
+	subtitle: "Obscura ist die Dating-App für alle, die Chemie über Klischees stellen. Beginne mit einem Gespräch, nicht nur mit einem Foto.",
+	cta: "Zur Warteliste"
+};
+var how_it_works$2 = {
+	title: "Deine Reise zu einer echten Verbindung",
+	step1_title: "1. Beginne mit einer Silhouette",
+	step1_desc: "Dein Profil zeigt deine Persönlichkeit, deine Leidenschaften und deine Antworten. Deine Fotos bleiben vollständig verschwommen.",
+	step2_title: "2. Erhalte kuratierte Matches",
+	step2_desc: "Kein endloses Swipen. Unsere KI liefert eine kleine Auswahl kompatibler Profile basierend auf gemeinsamen Werten.",
+	step3_title: "3. Verbinde dich im Chat",
+	step3_desc: "Nutze Text- und Sprachnachrichten, um die Persönlichkeit deines Gegenübers zu entdecken. Chemie entsteht hier, nicht durch ein Bild.",
+	step4_title: "4. Die gegenseitige Enthüllung",
+	step4_desc: "Nachdem eine Verbindung aufgebaut wurde (z. B. 50 Nachrichten), könnt ihr beide zustimmen, eure Fotos zu zeigen. Es ist eine gemeinsame Entscheidung."
+};
+var philosophy$2 = {
+	title: "Tiefe statt Wischen",
+	text: "Wir verlangsamen das Dating. Obscura ist ein Raum für authentische, neugierige und geduldige Menschen, die glauben, dass eine echte Verbindung mit dem Verstand und dem Herzen beginnt. Wir sind das Gegenmittel zur oberflächlichen Swipe-Kultur."
+};
+var footer$2 = {
+	copyright: "© 2025 Obscura. Alle Rechte vorbehalten.",
+	links: "Datenschutz | AGB"
+};
+const de = {
+	nav: nav$2,
+	hero: hero$2,
+	how_it_works: how_it_works$2,
+	philosophy: philosophy$2,
+	footer: footer$2
+};
+
+const de$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: de,
+  footer: footer$2,
+  hero: hero$2,
+  how_it_works: how_it_works$2,
+  nav: nav$2,
+  philosophy: philosophy$2
+}, Symbol.toStringTag, { value: 'Module' }));
+
+var nav$1 = {
+	how: "Comment ça marche",
+	philosophy: "Philosophie",
+	waitlist: "Rejoindre la liste d'attente"
+};
+var hero$1 = {
+	title: "La connexion d'abord. L'apparence ensuite.",
+	subtitle: "Obscura est l'application de rencontre pour ceux qui valorisent la chimie plutôt que les clichés. Commencez par une conversation, pas seulement une photo.",
+	cta: "Rejoindre la liste d'attente"
+};
+var how_it_works$1 = {
+	title: "Votre parcours vers une vraie connexion",
+	step1_title: "1. Commencez avec une silhouette",
+	step1_desc: "Votre profil montre votre personnalité, vos passions et vos réponses. Vos photos restent complètement floues.",
+	step2_title: "2. Recevez des matchs sélectionnés",
+	step2_desc: "Pas de swipe infini. Notre IA propose un petit lot de profils compatibles basés sur des valeurs partagées.",
+	step3_title: "3. Connectez-vous dans le chat",
+	step3_desc: "Utilisez des messages texte et vocaux pour découvrir leur personnalité. La chimie se construit ici, pas à partir d'une image.",
+	step4_title: "4. La révélation mutuelle",
+	step4_desc: "Après qu'une connexion soit établie (par ex., 50 messages), vous pouvez tous les deux accepter de révéler vos photos. C'est une décision mutuelle."
+};
+var philosophy$1 = {
+	title: "La profondeur plutôt que le swipe",
+	text: "Nous ralentissons les rencontres. Obscura est un espace pour les personnes authentiques, curieuses et patientes qui croient qu'une vraie connexion commence par l'esprit et le cœur. Nous sommes l'antidote à la culture du swipe superficiel."
+};
+var footer$1 = {
+	copyright: "© 2025 Obscura. Tous droits réservés.",
+	links: "Confidentialité | Conditions"
+};
+const fr = {
+	nav: nav$1,
+	hero: hero$1,
+	how_it_works: how_it_works$1,
+	philosophy: philosophy$1,
+	footer: footer$1
+};
+
+const fr$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: fr,
+  footer: footer$1,
+  hero: hero$1,
+  how_it_works: how_it_works$1,
+  nav: nav$1,
+  philosophy: philosophy$1
+}, Symbol.toStringTag, { value: 'Module' }));
+
+var nav = {
+	how: "Come funziona",
+	philosophy: "Filosofia",
+	waitlist: "Iscriviti alla lista d'attesa"
+};
+var hero = {
+	title: "Prima la connessione. L'aspetto dopo.",
+	subtitle: "Obscura è l'app di incontri per chi valorizza la chimica rispetto ai clichè. Inizia con una conversazione, non solo con una foto.",
+	cta: "Iscriviti alla lista d'attesa"
+};
+var how_it_works = {
+	title: "Il tuo viaggio verso una vera connessione",
+	step1_title: "1. Inizia con una silhouette",
+	step1_desc: "Il tuo profilo mostra la tua personalità, le tue passioni e le tue risposte. Le tue foto rimangono completamente sfocate.",
+	step2_title: "2. Ricevi match curati",
+	step2_desc: "Niente swipe infiniti. La nostra AI fornisce un piccolo gruppo di profili compatibili basati su valori condivisi.",
+	step3_title: "3. Connettiti nella chat",
+	step3_desc: "Usa messaggi di testo e vocali per scoprire la loro personalità. La chimica si costruisce qui, non da un'immagine.",
+	step4_title: "4. La rivelazione reciproca",
+	step4_desc: "Dopo che si è creata una connessione (ad es., 50 messaggi), potete entrambi accettare di rivelare le vostre foto. È una decisione reciproca."
+};
+var philosophy = {
+	title: "Profondità invece di swipe",
+	text: "Stiamo rallentando gli incontri. Obscura è uno spazio per persone autentiche, curiose e pazienti che credono che una vera connessione inizi con la mente e il cuore. Siamo l'antidoto alla cultura superficiale dello swipe."
+};
+var footer = {
+	copyright: "© 2025 Obscura. Tutti i diritti riservati.",
+	links: "Privacy | Termini"
+};
+const it = {
+	nav: nav,
+	hero: hero,
+	how_it_works: how_it_works,
+	philosophy: philosophy,
+	footer: footer
+};
+
+const it$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: it,
+  footer: footer,
+  hero: hero,
+  how_it_works: how_it_works,
+  nav: nav,
+  philosophy: philosophy
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const template = "";

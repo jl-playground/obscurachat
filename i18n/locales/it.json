@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "how": "Come funziona",
+    "philosophy": "Filosofia",
+    "waitlist": "Iscriviti alla lista d'attesa"
+  },
+  "hero": {
+    "title": "Prima la connessione. L'aspetto dopo.",
+    "subtitle": "Obscura è l'app di incontri per chi valorizza la chimica rispetto ai clichè. Inizia con una conversazione, non solo con una foto.",
+    "cta": "Iscriviti alla lista d'attesa"
+  },
+  "how_it_works": {
+    "title": "Il tuo viaggio verso una vera connessione",
+    "step1_title": "1. Inizia con una silhouette",
+    "step1_desc": "Il tuo profilo mostra la tua personalità, le tue passioni e le tue risposte. Le tue foto rimangono completamente sfocate.",
+    "step2_title": "2. Ricevi match curati",
+    "step2_desc": "Niente swipe infiniti. La nostra AI fornisce un piccolo gruppo di profili compatibili basati su valori condivisi.",
+    "step3_title": "3. Connettiti nella chat",
+    "step3_desc": "Usa messaggi di testo e vocali per scoprire la loro personalità. La chimica si costruisce qui, non da un'immagine.",
+    "step4_title": "4. La rivelazione reciproca",
+    "step4_desc": "Dopo che si è creata una connessione (ad es., 50 messaggi), potete entrambi accettare di rivelare le vostre foto. È una decisione reciproca."
+  },
+  "philosophy": {
+    "title": "Profondità invece di swipe",
+    "text": "Stiamo rallentando gli incontri. Obscura è uno spazio per persone autentiche, curiose e pazienti che credono che una vera connessione inizi con la mente e il cuore. Siamo l'antidoto alla cultura superficiale dello swipe."
+  },
+  "footer": {
+    "copyright": "© 2025 Obscura. Tutti i diritti riservati.",
+    "links": "Privacy | Termini"
+  }
+}

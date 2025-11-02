@@ -1,54 +1,20 @@
 <template>
-  <UPageHero
-    title="Nuxt Starter Template"
-    description="A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours."
-    :links="[
-      {
-        label: 'Get started',
-        to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-        target: '_blank',
-        trailingIcon: 'i-lucide-arrow-right',
-        size: 'xl',
-      },
-      {
-        label: 'Use this template',
-        to: 'https://github.com/nuxt-ui-templates/starter',
-        target: '_blank',
-        icon: 'i-simple-icons-github',
-        size: 'xl',
-        color: 'neutral',
-        variant: 'subtle',
-      },
-    ]"
-  />
+  <section class="py-24 md:py-32">
+    <UContainer class="text-center max-w-3xl">
+      <h1
+        class="text-4xl md:text-6xl font-bold tracking-tighter text-charcoal dark:text-white"
+      >
+        {{ $t("hero.title") }}
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300">
+        {{ $t("hero.subtitle") }}
+      </p>
+      <UButton
+        :label="$t('hero.cta')"
+        color="primary"
+        size="xl"
+        class="mt-10 font-bold"
+      />
+    </UContainer>
+  </section>
 </template>
-<script setup lang="ts">
-//* VUE
-/* import {ref} from 'vue'; */
-
-//* COMPOSABLES
-
-//* GRAPHQL
-
-//* VUELIDATE
-
-//* CUSTOM
-
-//* COMPONENTS
-
-//* CONTROLLERS
-
-//* LOAD INITIAL
-
-//* VARIABLES
-
-//* QUERYS
-
-//* COMPUTED
-
-//* METHODS
-
-//* MOUNTED
-
-//* CREATED
-</script>

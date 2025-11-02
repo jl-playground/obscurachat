@@ -1,56 +1,24 @@
 <template>
-  <UPageSection>
-    <UPageCTA
-      title="Ready to build your next Nuxt app?"
-      description="Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today."
-      variant="subtle"
-      :links="[
-        {
-          label: 'Start building',
-          to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-          target: '_blank',
-          trailingIcon: 'i-lucide-arrow-right',
-          color: 'neutral',
-        },
-        {
-          label: 'View on GitHub',
-          to: 'https://github.com/nuxt-ui-templates/starter',
-          target: '_blank',
-          icon: 'i-simple-icons-github',
-          color: 'neutral',
-          variant: 'outline',
-        },
-      ]"
-    />
-  </UPageSection>
+  <section
+    id="philosophy"
+    class="py-24 md:py-32"
+  >
+    <UContainer class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div
+          class="w-full h-80 rounded-lg bg-gray-200 dark:bg-gray-800 flex items-center justify-center border border-gray-300 dark:border-gray-700"
+        >
+          <span class="text-gray-400">(Abstract "silhouette" visual)</span>
+        </div>
+      </div>
+      <div class="max-w-xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary-500">
+          {{ $t("philosophy.title") }}
+        </h2>
+        <p class="mt-6 text-lg text-gray-600 dark:text-gray-300">
+          {{ $t("philosophy.text") }}
+        </p>
+      </div>
+    </UContainer>
+  </section>
 </template>
-<script setup lang="ts">
-//* VUE
-/* import {ref} from 'vue'; */
-
-//* COMPOSABLES
-
-//* GRAPHQL
-
-//* VUELIDATE
-
-//* CUSTOM
-
-//* COMPONENTS
-
-//* CONTROLLERS
-
-//* LOAD INITIAL
-
-//* VARIABLES
-
-//* QUERYS
-
-//* COMPUTED
-
-//* METHODS
-
-//* MOUNTED
-
-//* CREATED
-</script>

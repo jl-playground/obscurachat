@@ -1,75 +1,60 @@
 <template>
-  <UPageSection
-    id="features"
-    title="Everything you need to build modern Nuxt apps"
-    description="Start with a solid foundation. This template includes all the essentials for building production-ready applications with Nuxt UI's powerful component system."
-    :features="[
-      {
-        icon: 'i-lucide-rocket',
-        title: 'Production-ready from day one',
-        description:
-          'Pre-configured with TypeScript, ESLint, Tailwind CSS, and all the best practices. Focus on building features, not setting up tooling.',
-      },
-      {
-        icon: 'i-lucide-palette',
-        title: 'Beautiful by default',
-        description:
-          'Leveraging Nuxt UI\'s design system with automatic dark mode, consistent spacing, and polished components that look great out of the box.',
-      },
-      {
-        icon: 'i-lucide-zap',
-        title: 'Lightning fast',
-        description:
-          'Optimized for performance with SSR/SSG support, automatic code splitting, and edge-ready deployment. Your users will love the speed.',
-      },
-      {
-        icon: 'i-lucide-blocks',
-        title: '100+ components included',
-        description:
-          'Access Nuxt UI\'s comprehensive component library. From forms to navigation, everything is accessible, responsive, and customizable.',
-      },
-      {
-        icon: 'i-lucide-code-2',
-        title: 'Developer experience first',
-        description:
-          'Auto-imports, hot module replacement, and TypeScript support. Write less boilerplate and ship more features.',
-      },
-      {
-        icon: 'i-lucide-shield-check',
-        title: 'Built for scale',
-        description:
-          'Enterprise-ready architecture with proper error handling, SEO optimization, and security best practices built-in.',
-      },
-    ]"
-  />
+  <section
+    id="how-it-works"
+    class="py-24 bg-gray-50 dark:bg-gray-900"
+  >
+    <UContainer>
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold">
+          {{ $t("how_it_works.title") }}
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <UCard>
+          <template #header>
+            <h3 class="text-lg font-bold text-primary-500">
+              {{ $t("how_it_works.step1_title") }}
+            </h3>
+          </template>
+          <p class="text-sm text-gray-600 dark:text-gray-300">
+            {{ $t("how_it_works.step1_desc") }}
+          </p>
+        </UCard>
+
+        <UCard>
+          <template #header>
+            <h3 class="text-lg font-bold text-primary-500">
+              {{ $t("how_it_works.step2_title") }}
+            </h3>
+          </template>
+          <p class="text-sm text-gray-600 dark:text-gray-300">
+            {{ $t("how_it_works.step2_desc") }}
+          </p>
+        </UCard>
+
+        <UCard>
+          <template #header>
+            <h3 class="text-lg font-bold text-primary-500">
+              {{ $t("how_it_works.step3_title") }}
+            </h3>
+          </template>
+          <p class="text-sm text-gray-600 dark:text-gray-300">
+            {{ $t("how_it_works.step3_desc") }}
+          </p>
+        </UCard>
+
+        <UCard>
+          <template #header>
+            <h3 class="text-lg font-bold text-accent-500">
+              {{ $t("how_it_works.step4_title") }}
+            </h3>
+          </template>
+          <p class="text-sm text-gray-600 dark:text-gray-300">
+            {{ $t("how_it_works.step4_desc") }}
+          </p>
+        </UCard>
+      </div>
+    </UContainer>
+  </section>
 </template>
-<script setup lang="ts">
-//* VUE
-/* import {ref} from 'vue'; */
-
-//* COMPOSABLES
-
-//* GRAPHQL
-
-//* VUELIDATE
-
-//* CUSTOM
-
-//* COMPONENTS
-
-//* CONTROLLERS
-
-//* LOAD INITIAL
-
-//* VARIABLES
-
-//* QUERYS
-
-//* COMPUTED
-
-//* METHODS
-
-//* MOUNTED
-
-//* CREATED
-</script>

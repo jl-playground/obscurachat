@@ -14,6 +14,7 @@ declare module "#build/plugins.server.mjs";
 declare module "#build/test-component-wrapper.mjs";
 declare module "#build/color-mode-options.mjs";
 declare module "#build/image-options.mjs";
+declare module "#build/i18n-options.mjs";
 declare module "#build/devtools/settings.mjs";
 declare module "#build/runtime.vue-devtools-client.2_kr2Ov5FYkPe93YHrii5QUmQTVHzmSwEQ3FC32syOc.js";
 declare module "#build/routes.mjs";

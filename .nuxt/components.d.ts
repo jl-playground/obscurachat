@@ -15,8 +15,8 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 
 
 export const AppLogo: typeof import("../app/components/AppLogo.vue")['default']
-export const Footer: typeof import("../app/components/Footer.vue")['default']
-export const Header: typeof import("../app/components/Header.vue")['default']
+export const FooterComponent: typeof import("../app/components/FooterComponent.vue")['default']
+export const HeaderComponent: typeof import("../app/components/HeaderComponent.vue")['default']
 export const TemplateMenu: typeof import("../app/components/TemplateMenu.vue")['default']
 export const SectionsFeatureSection: typeof import("../app/components/sections/FeatureSection.vue")['default']
 export const SectionsIdeaSection: typeof import("../app/components/sections/IdeaSection.vue")['default']
@@ -259,6 +259,8 @@ export const NuxtImg: typeof import("../node_modules/@nuxt/image/dist/runtime/co
 export const NuxtPicture: typeof import("../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue")['default']
 export const Icon: typeof import("../node_modules/@nuxt/icon/dist/runtime/components/index")['default']
 export const ColorScheme: typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
+export const NuxtLinkLocale: typeof import("../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']
+export const SwitchLocalePathLink: typeof import("../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']
 export const NuxtPage: typeof import("../node_modules/nuxt/dist/pages/runtime/page")['default']
 export const NoScript: typeof import("../node_modules/nuxt/dist/head/runtime/components")['NoScript']
 export const Link: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Link']
@@ -271,8 +273,8 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const LazyAppLogo: LazyComponent<typeof import("../app/components/AppLogo.vue")['default']>
-export const LazyFooter: LazyComponent<typeof import("../app/components/Footer.vue")['default']>
-export const LazyHeader: LazyComponent<typeof import("../app/components/Header.vue")['default']>
+export const LazyFooterComponent: LazyComponent<typeof import("../app/components/FooterComponent.vue")['default']>
+export const LazyHeaderComponent: LazyComponent<typeof import("../app/components/HeaderComponent.vue")['default']>
 export const LazyTemplateMenu: LazyComponent<typeof import("../app/components/TemplateMenu.vue")['default']>
 export const LazySectionsFeatureSection: LazyComponent<typeof import("../app/components/sections/FeatureSection.vue")['default']>
 export const LazySectionsIdeaSection: LazyComponent<typeof import("../app/components/sections/IdeaSection.vue")['default']>
@@ -515,6 +517,8 @@ export const LazyNuxtImg: LazyComponent<typeof import("../node_modules/@nuxt/ima
 export const LazyNuxtPicture: LazyComponent<typeof import("../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue")['default']>
 export const LazyIcon: LazyComponent<typeof import("../node_modules/@nuxt/icon/dist/runtime/components/index")['default']>
 export const LazyColorScheme: LazyComponent<typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']>
+export const LazyNuxtLinkLocale: LazyComponent<typeof import("../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']>
+export const LazySwitchLocalePathLink: LazyComponent<typeof import("../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']>
 export const LazyNuxtPage: LazyComponent<typeof import("../node_modules/nuxt/dist/pages/runtime/page")['default']>
 export const LazyNoScript: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components")['NoScript']>
 export const LazyLink: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components")['Link']>
