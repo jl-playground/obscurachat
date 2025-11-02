@@ -9,11 +9,11 @@ on:
       - main
 
 env:
-  IMAGE: jl115/portfolio:${{ github.sha }}
+  IMAGE: jl-playground/obscurachat:${{ github.sha }}
   CONFIG_PATH: ./k8s
-  KUBERNETES_NAMESPACE: portfolio
-  APP_NAME: portfolio
-  BASE_URL: joelleimbacher.tech
+  KUBERNETES_NAMESPACE: obscuramatch
+  APP_NAME: obscuramatch
+  BASE_URL: obscuramatch.ch
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
