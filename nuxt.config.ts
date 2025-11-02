@@ -1,11 +1,5 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/eslint',
-    '@nuxt/image',
-    '@nuxt/ui',
-    '@nuxt/content'
-  ],
+  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/image'],
 
   devtools: {
     enabled: true
@@ -13,21 +7,11 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
-  mdc: {
-    highlight: {
-      noApiRoute: false
-    }
+  routeRules: {
+    '/': { prerender: true }
   },
 
   compatibilityDate: '2025-01-15',
-
-  nitro: {
-    prerender: {
-      routes: [
-        '/'
-      ]
-    }
-  },
 
   eslint: {
     config: {

@@ -1,36 +1,38 @@
-<script setup lang="ts">
-const colorMode = useColorMode()
-
-const color = computed(() => colorMode.value === 'dark' ? '#171717' : 'white')
+<script setup>
+import Footer from "./components/Footer.vue";
+import Header from "./components/Header.vue";
 
 useHead({
-  meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { key: 'theme-color', name: 'theme-color', content: color }
-  ],
-  link: [
-    { rel: 'icon', href: '/favicon.ico' }
-  ],
+  meta: [{ name: "viewport", content: "width=device-width, initial-scale=1" }],
+  link: [{ rel: "icon", href: "/favicon.ico" }],
   htmlAttrs: {
-    lang: 'en'
-  }
-})
+    lang: "en",
+  },
+});
+
+const title = "Nuxt Starter Template";
+const description =
+  "A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.";
 
 useSeoMeta({
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/landing-light.png',
-  twitterImage: 'https://ui.nuxt.com/assets/templates/nuxt/landing-light.png',
-  twitterCard: 'summary_large_image'
-})
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage: "https://ui.nuxt.com/assets/templates/nuxt/starter-light.png",
+  twitterImage: "https://ui.nuxt.com/assets/templates/nuxt/starter-light.png",
+  twitterCard: "summary_large_image",
+});
 </script>
 
 <template>
-  <UApp :toaster="{ expand: false }">
-    <AppHeader />
-
+  <UApp>
+    <Header />
     <UMain>
       <NuxtPage />
     </UMain>
 
-    <AppFooter />
+    <USeparator icon="i-simple-icons-nuxtdotjs" />
+    <Footer />
   </UApp>
 </template>

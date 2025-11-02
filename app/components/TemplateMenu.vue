@@ -4,13 +4,13 @@
     :modal="false"
     :items="[{
       label: 'Starter',
-      to: 'https://starter-template.nuxt.dev/'
-    }, {
-      label: 'Landing',
-      to: 'https://landing-template.nuxt.dev/',
+      to: 'https://starter-template.nuxt.dev/',
       color: 'primary',
       checked: true,
       type: 'checkbox'
+    }, {
+      label: 'Landing',
+      to: 'https://landing-template.nuxt.dev/'
     }, {
       label: 'Docs',
       to: 'https://docs-template.nuxt.dev/'
@@ -35,7 +35,7 @@
     size="xs"
   >
     <UButton
-      label="Landing"
+      label="Starter"
       variant="subtle"
       trailing-icon="i-lucide-chevron-down"
       size="xs"

@@ -1,12 +1,10 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, getResponseStatus, getRouterParam, setHeader, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getResponseStatusText } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, getResponseStatus, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, getResponseStatusText } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
 import { escapeHtml } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@vue/shared/dist/shared.cjs.js';
-import { createOnigurumaEngine } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/shiki/dist/engine-oniguruma.mjs';
-import { createJavaScriptRegexEngine } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/shiki/dist/engine-javascript.mjs';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/ufo/dist/index.mjs';
 import destr, { destr as destr$1 } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/destr/dist/index.mjs';
@@ -38,7 +36,6 @@ import { renderToString } from 'file:///Users/jldev/Projects/3-vps/obscurachat/n
 import { walkResolver } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/unhead/dist/utils.mjs';
 import { getIcons } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@iconify/utils/lib/index.js';
 import { collections } from 'file:///Users/jldev/Projects/3-vps/obscurachat/.nuxt/nuxt-icon-server-bundle.mjs';
-import localAdapter from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/db0/dist/connectors/better-sqlite3.mjs';
 import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/ipx/dist/index.mjs';
 
 const serverAssets = [{"baseName":"server","dir":"/Users/jldev/Projects/3-vps/obscurachat/server/assets"}];
@@ -586,8 +583,8 @@ const defineAppConfig = (config) => config;
 const appConfig0 = defineAppConfig({
   ui: {
     colors: {
-      primary: "orange",
-      neutral: "neutral"
+      primary: "green",
+      neutral: "slate"
     }
   }
 });
@@ -898,6 +895,9 @@ const _inlineRuntimeConfig = {
       "/__nuxt_error": {
         "cache": false
       },
+      "/": {
+        "prerender": true
+      },
       "/_fonts/**": {
         "headers": {
           "cache-control": "public, max-age=31536000, immutable"
@@ -905,12 +905,6 @@ const _inlineRuntimeConfig = {
         "cache": {
           "maxAge": 31536000
         }
-      },
-      "/__nuxt_content/**": {
-        "robots": false
-      },
-      "/__nuxt_content/content/sql_dump.txt": {
-        "prerender": true
       },
       "/_nuxt/builds/meta/**": {
         "headers": {
@@ -924,66 +918,9 @@ const _inlineRuntimeConfig = {
       }
     }
   },
-  "public": {
-    "content": {
-      "wsUrl": "ws://localhost:4000/"
-    },
-    "mdc": {
-      "components": {
-        "prose": true,
-        "map": {
-          "accordion": "ProseAccordion",
-          "accordion-item": "ProseAccordionItem",
-          "badge": "ProseBadge",
-          "callout": "ProseCallout",
-          "card": "ProseCard",
-          "card-group": "ProseCardGroup",
-          "caution": "ProseCaution",
-          "code-collapse": "ProseCodeCollapse",
-          "code-group": "ProseCodeGroup",
-          "code-icon": "ProseCodeIcon",
-          "code-preview": "ProseCodePreview",
-          "code-tree": "ProseCodeTree",
-          "collapsible": "ProseCollapsible",
-          "field": "ProseField",
-          "field-group": "ProseFieldGroup",
-          "icon": "ProseIcon",
-          "kbd": "ProseKbd",
-          "note": "ProseNote",
-          "steps": "ProseSteps",
-          "tabs": "ProseTabs",
-          "tabs-item": "ProseTabsItem",
-          "tip": "ProseTip",
-          "warning": "ProseWarning"
-        }
-      },
-      "headings": {
-        "anchorLinks": {
-          "h1": false,
-          "h2": true,
-          "h3": true,
-          "h4": true,
-          "h5": false,
-          "h6": false
-        }
-      }
-    }
-  },
+  "public": {},
   "icon": {
     "serverKnownCssClasses": []
-  },
-  "content": {
-    "databaseVersion": "v3.5.0",
-    "version": "3.7.1",
-    "database": {
-      "type": "sqlite",
-      "filename": "./contents.sqlite"
-    },
-    "localDatabase": {
-      "type": "sqlite",
-      "filename": "/Users/jldev/Projects/3-vps/obscurachat/.data/content/contents.sqlite"
-    },
-    "integrityCheck": true
   },
   "ipx": {
     "baseURL": "/_ipx",
@@ -2301,57 +2238,6 @@ async function runTask(name, {
   }
 }
 
-const checksums = {
-  "content": "v3.5.0--BquSRaR2W5P-ZZZbAq0sksvhWNTwVtjTIoqjvsy0_pg"
-};
-const checksumsStructure = {
-  "content": "KhMgqnpHw-IXGVD_u1d0XNbHssaPiNvgmhUyVZwAT70"
-};
-const tables = {
-  "content": "_content_content",
-  "info": "_content_info"
-};
-const contentManifest = {
-  "content": {
-    "type": "page",
-    "fields": {
-      "id": "string",
-      "title": "string",
-      "body": "json",
-      "cta": "json",
-      "description": "string",
-      "extension": "string",
-      "features": "json",
-      "hero": "json",
-      "meta": "json",
-      "navigation": "json",
-      "path": "string",
-      "pricing": "json",
-      "section": "json",
-      "seo": "json",
-      "stem": "string",
-      "steps": "json",
-      "testimonials": "json"
-    }
-  },
-  "info": {
-    "type": "data",
-    "fields": {}
-  }
-};
-
-async function fetchDatabase(event, collection) {
-  return await $fetch(`/__nuxt_content/${collection}/sql_dump.txt`, {
-    context: event ? { cloudflare: event.context.cloudflare } : {},
-    responseType: "text",
-    headers: {
-      "content-type": "text/plain",
-      ...event?.node?.req?.headers?.cookie ? { cookie: event.node.req.headers.cookie } : {}
-    },
-    query: { v: checksums[String(collection)], t: Date.now()  }
-  });
-}
-
 const warnOnceSet = /* @__PURE__ */ new Set();
 const DEFAULT_ENDPOINT = "https://api.iconify.design";
 const _owA577 = defineCachedEventHandler(async (event) => {
@@ -2412,307 +2298,6 @@ const _owA577 = defineCachedEventHandler(async (event) => {
   // 1 week
 });
 
-const _nHu9gI = eventHandler(async (event) => {
-  const { code, lang, theme: themeString, options: optionsStr } = getQuery$1(event);
-  const theme = JSON.parse(themeString);
-  const options = optionsStr ? JSON.parse(optionsStr) : {};
-  const highlighter = await Promise.resolve().then(function () { return mdcHighlighter; }).then((m) => m.default);
-  return await highlighter(code, lang, theme, options);
-});
-
-const _wkDU7Z = eventHandler(async (event) => {
-  const collection = getRouterParam(event, "collection");
-  setHeader(event, "Content-Type", "text/plain");
-  const data = await useStorage().getItem(`build:content:database.compressed.mjs`) || "";
-  if (data) {
-    const lineStart = `export const ${collection} = "`;
-    const content = String(data).split("\n").find((line) => line.startsWith(lineStart));
-    if (content) {
-      return content.substring(lineStart.length, content.length - 1);
-    }
-  }
-  return await import('file:///Users/jldev/Projects/3-vps/obscurachat/.nuxt/content/database.compressed.mjs').then((m) => m[collection]);
-});
-
-async function decompressSQLDump(base64Str, compressionType = "gzip") {
-  const binaryData = Uint8Array.from(atob(base64Str), (c) => c.charCodeAt(0));
-  const response = new Response(new Blob([binaryData]));
-  const decompressedStream = response.body?.pipeThrough(new DecompressionStream(compressionType));
-  const text = await new Response(decompressedStream).text();
-  return JSON.parse(text);
-}
-
-function refineContentFields(sql, doc) {
-  const fields = findCollectionFields(sql);
-  const item = { ...doc };
-  for (const key in item) {
-    if (fields[key] === "json" && item[key] && item[key] !== "undefined") {
-      item[key] = JSON.parse(item[key]);
-    }
-    if (fields[key] === "boolean" && item[key] !== "undefined") {
-      item[key] = Boolean(item[key]);
-    }
-  }
-  for (const key in item) {
-    if (item[key] === "NULL") {
-      item[key] = void 0;
-    }
-  }
-  return item;
-}
-function findCollectionFields(sql) {
-  const table = sql.match(/FROM\s+(\w+)/);
-  if (!table) {
-    return {};
-  }
-  const info = contentManifest[getCollectionName(table[1])];
-  return info?.fields || {};
-}
-function getCollectionName(table) {
-  return table.replace(/^_content_/, "");
-}
-
-let db;
-function loadDatabaseAdapter(config) {
-  const { database, localDatabase } = config;
-  if (!db) {
-    {
-      db = localAdapter(refineDatabaseConfig(localDatabase));
-    }
-  }
-  return {
-    all: async (sql, params = []) => {
-      return db.prepare(sql).all(...params).then((result) => (result || []).map((item) => refineContentFields(sql, item)));
-    },
-    first: async (sql, params = []) => {
-      return db.prepare(sql).get(...params).then((item) => item ? refineContentFields(sql, item) : item);
-    },
-    exec: async (sql, params = []) => {
-      return db.prepare(sql).run(...params);
-    }
-  };
-}
-const checkDatabaseIntegrity = {};
-const integrityCheckPromise = {};
-async function checkAndImportDatabaseIntegrity(event, collection, config) {
-  if (checkDatabaseIntegrity[String(collection)] !== false) {
-    checkDatabaseIntegrity[String(collection)] = false;
-    integrityCheckPromise[String(collection)] = integrityCheckPromise[String(collection)] || _checkAndImportDatabaseIntegrity(event, collection, checksums[String(collection)], checksumsStructure[String(collection)], config).then((isValid) => {
-      checkDatabaseIntegrity[String(collection)] = !isValid;
-    }).catch((error) => {
-      console.error("Database integrity check failed", error);
-      checkDatabaseIntegrity[String(collection)] = true;
-      integrityCheckPromise[String(collection)] = null;
-    });
-  }
-  if (integrityCheckPromise[String(collection)]) {
-    await integrityCheckPromise[String(collection)];
-  }
-}
-async function _checkAndImportDatabaseIntegrity(event, collection, integrityVersion, structureIntegrityVersion, config) {
-  const db2 = loadDatabaseAdapter(config);
-  const before = await db2.first(`SELECT * FROM ${tables.info} WHERE id = ?`, [`checksum_${collection}`]).catch(() => null);
-  if (before?.version && !String(before.version)?.startsWith(`${config.databaseVersion}--`)) {
-    await db2.exec(`DROP TABLE IF EXISTS ${tables.info}`);
-    before.version = "";
-  }
-  const unchangedStructure = before?.structureVersion === structureIntegrityVersion;
-  if (before?.version) {
-    if (before.version === integrityVersion) {
-      if (before.ready) {
-        return true;
-      }
-      await waitUntilDatabaseIsReady(db2, collection);
-      return true;
-    }
-    await db2.exec(`DELETE FROM ${tables.info} WHERE id = ?`, [`checksum_${collection}`]);
-    if (!unchangedStructure) {
-      await db2.exec(`DROP TABLE IF EXISTS ${tables[collection]}`);
-    }
-  }
-  const dump = await loadDatabaseDump(event, collection).then(decompressSQLDump);
-  const dumpLinesHash = dump.map((row) => row.split(" -- ").pop());
-  let hashesInDb = /* @__PURE__ */ new Set();
-  if (unchangedStructure) {
-    const hashListFromTheDump = new Set(dumpLinesHash);
-    const hashesInDbRecords = await db2.all(`SELECT __hash__ FROM ${tables[collection]}`).catch(() => []);
-    hashesInDb = new Set(hashesInDbRecords.map((r) => r.__hash__));
-    const hashesToDelete = hashesInDb.difference(hashListFromTheDump);
-    if (hashesToDelete.size) {
-      await db2.exec(`DELETE FROM ${tables[collection]} WHERE __hash__ IN (${Array(hashesToDelete.size).fill("?").join(",")})`, Array.from(hashesToDelete));
-    }
-  }
-  await dump.reduce(async (prev, sql, index) => {
-    await prev;
-    const hash = dumpLinesHash[index];
-    const statement = sql.substring(0, sql.length - hash.length - 4);
-    if (unchangedStructure) {
-      if (hash === "structure") {
-        return Promise.resolve();
-      }
-      if (hashesInDb.has(hash)) {
-        return Promise.resolve();
-      }
-    }
-    await db2.exec(statement).catch((err) => {
-      const message = err.message || "Unknown error";
-      console.error(`Failed to execute SQL ${sql}: ${message}`);
-    });
-  }, Promise.resolve());
-  const after = await db2.first(`SELECT version FROM ${tables.info} WHERE id = ?`, [`checksum_${collection}`]).catch(() => ({ version: "" }));
-  return after?.version === integrityVersion;
-}
-const REQUEST_TIMEOUT = 90;
-async function waitUntilDatabaseIsReady(db2, collection) {
-  let iterationCount = 0;
-  let interval;
-  await new Promise((resolve, reject) => {
-    interval = setInterval(async () => {
-      const row = await db2.first(`SELECT ready FROM ${tables.info} WHERE id = ?`, [`checksum_${collection}`]).catch(() => ({ ready: true }));
-      if (row?.ready) {
-        clearInterval(interval);
-        resolve(0);
-      }
-      if (iterationCount++ > REQUEST_TIMEOUT) {
-        clearInterval(interval);
-        reject(new Error("Waiting for another database initialization timed out"));
-      }
-    }, 1e3);
-  }).catch((e) => {
-    throw e;
-  }).finally(() => {
-    if (interval) {
-      clearInterval(interval);
-    }
-  });
-}
-async function loadDatabaseDump(event, collection) {
-  return await fetchDatabase(event, String(collection)).catch((e) => {
-    console.error("Failed to fetch compressed dump", e);
-    return "";
-  });
-}
-function refineDatabaseConfig(config) {
-  if (config.type === "d1") {
-    return { ...config, bindingName: config.bindingName || config.binding };
-  }
-  if (config.type === "sqlite") {
-    const _config = { ...config };
-    if (config.filename === ":memory:") {
-      return { name: "memory" };
-    }
-    if ("filename" in config) {
-      const filename = isAbsolute(config?.filename || "") || config?.filename === ":memory:" ? config?.filename : new URL(config.filename, globalThis._importMeta_.url).pathname;
-      _config.path = process.platform === "win32" && filename.startsWith("/") ? filename.slice(1) : filename;
-    }
-    return _config;
-  }
-  return config;
-}
-
-const SQL_COMMANDS = /SELECT|INSERT|UPDATE|DELETE|DROP|ALTER|\$/i;
-const SQL_COUNT_REGEX = /COUNT\((DISTINCT )?([a-z_]\w+|\*)\)/i;
-const SQL_SELECT_REGEX = /^SELECT (.*) FROM (\w+)( WHERE .*)? ORDER BY (["\w,\s]+) (ASC|DESC)( LIMIT \d+)?( OFFSET \d+)?$/;
-function assertSafeQuery(sql, collection) {
-  if (!sql) {
-    throw new Error("Invalid query");
-  }
-  const cleanedupQuery = cleanupQuery(sql);
-  if (cleanedupQuery !== sql) {
-    throw new Error("Invalid query");
-  }
-  const match = sql.match(SQL_SELECT_REGEX);
-  if (!match) {
-    throw new Error("Invalid query");
-  }
-  const [_, select, from, where, orderBy, order, limit, offset] = match;
-  const columns = select?.trim().split(", ") || [];
-  if (columns.length === 1) {
-    if (columns[0] !== "*" && !columns[0]?.match(SQL_COUNT_REGEX) && !columns[0]?.match(/^"[a-z_]\w+"$/i)) {
-      throw new Error("Invalid query");
-    }
-  } else if (!columns.every((column) => column.match(/^"[a-z_]\w+"$/i))) {
-    throw new Error("Invalid query");
-  }
-  if (from !== `_content_${collection}`) {
-    throw new Error("Invalid query");
-  }
-  if (where) {
-    if (!where.startsWith(" WHERE (") || !where.endsWith(")")) {
-      throw new Error("Invalid query");
-    }
-    const noString = cleanupQuery(where, { removeString: true });
-    if (noString.match(SQL_COMMANDS)) {
-      throw new Error("Invalid query");
-    }
-  }
-  const _order = (orderBy + " " + order).split(", ");
-  if (!_order.every((column) => column.match(/^("[a-zA-Z_]+"|[a-zA-Z_]+) (ASC|DESC)$/))) {
-    throw new Error("Invalid query");
-  }
-  if (limit !== void 0 && !limit.match(/^ LIMIT \d+$/)) {
-    throw new Error("Invalid query");
-  }
-  if (offset !== void 0 && !offset.match(/^ OFFSET \d+$/)) {
-    throw new Error("Invalid query");
-  }
-  return true;
-}
-function cleanupQuery(query, options = { removeString: false }) {
-  let inString = false;
-  let stringFence = "";
-  let result = "";
-  for (let i = 0; i < query.length; i++) {
-    const char = query[i];
-    const prevChar = query[i - 1];
-    const nextChar = query[i + 1];
-    if (char === "'" || char === '"') {
-      if (!options?.removeString) {
-        result += char;
-        continue;
-      }
-      if (inString) {
-        if (char !== stringFence || nextChar === stringFence || prevChar === stringFence) {
-          continue;
-        }
-        inString = false;
-        stringFence = "";
-        continue;
-      } else {
-        inString = true;
-        stringFence = char;
-        continue;
-      }
-    }
-    if (!inString) {
-      if (char === "-" && nextChar === "-") {
-        return result;
-      }
-      if (char === "/" && nextChar === "*") {
-        i += 2;
-        while (i < query.length && !(query[i] === "*" && query[i + 1] === "/")) {
-          i += 1;
-        }
-        i += 2;
-        continue;
-      }
-      result += char;
-    }
-  }
-  return result;
-}
-
-const __uXhty = eventHandler(async (event) => {
-  const { sql } = await readBody(event);
-  const collection = getRouterParam(event, "collection");
-  assertSafeQuery(sql, collection);
-  const conf = useRuntimeConfig().content;
-  if (conf.integrityCheck) {
-    await checkAndImportDatabaseIntegrity(event, collection, conf);
-  }
-  return loadDatabaseAdapter(conf).all(sql);
-});
-
 const _sLTsJm = lazyEventHandler(() => {
   const opts = useRuntimeConfig().ipx || {};
   const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
@@ -2738,9 +2323,6 @@ const handlers = [
   { route: '/__nuxt_error', handler: _lazy_w5Fm1z, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
   { route: '/api/_nuxt_icon/:collection', handler: _owA577, lazy: false, middleware: false, method: undefined },
-  { route: '/api/_mdc/highlight', handler: _nHu9gI, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/:collection/sql_dump.txt', handler: _wkDU7Z, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/:collection/query', handler: __uXhty, lazy: false, middleware: false, method: undefined },
   { route: '/_ipx/**', handler: _sLTsJm, lazy: false, middleware: false, method: undefined },
   { route: '/_fonts/**', handler: _lazy_w5Fm1z, lazy: true, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_w5Fm1z, lazy: true, middleware: false, method: undefined }
@@ -2996,236 +2578,6 @@ const styles = {};
 const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: styles
-}, Symbol.toStringTag, { value: 'Module' }));
-
-let configs;
-function getMdcConfigs () {
-if (!configs) {
-  configs = Promise.all([
-  ]);
-}
-return configs
-}
-
-function createShikiHighlighter({
-  langs = [],
-  themes = [],
-  bundledLangs = {},
-  bundledThemes = {},
-  getMdcConfigs,
-  options: shikiOptions,
-  engine
-} = {}) {
-  let shiki;
-  let configs;
-  async function _getShiki() {
-    const { createHighlighterCore, addClassToHast, isSpecialLang, isSpecialTheme } = await import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/core/dist/index.mjs');
-    const { transformerNotationDiff, transformerNotationErrorLevel, transformerNotationFocus, transformerNotationHighlight } = await import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/transformers/dist/index.mjs');
-    const shiki2 = await createHighlighterCore({
-      langs,
-      themes,
-      engine: engine || createJavaScriptRegexEngine()
-    });
-    for await (const config of await getConfigs()) {
-      await config.shiki?.setup?.(shiki2);
-    }
-    return {
-      shiki: shiki2,
-      addClassToHast,
-      isSpecialLang,
-      isSpecialTheme,
-      transformers: [
-        transformerNotationDiff(),
-        transformerNotationErrorLevel(),
-        transformerNotationFocus(),
-        transformerNotationHighlight()
-      ]
-    };
-  }
-  async function getShiki() {
-    if (!shiki) {
-      shiki = _getShiki();
-    }
-    return shiki;
-  }
-  async function getConfigs() {
-    if (!configs) {
-      configs = Promise.resolve(getMdcConfigs?.() || []);
-    }
-    return configs;
-  }
-  const highlighter = async (code, lang, theme, options = {}) => {
-    const {
-      shiki: shiki2,
-      addClassToHast,
-      isSpecialLang,
-      isSpecialTheme,
-      transformers: baseTransformers
-    } = await getShiki();
-    const codeToHastOptions = {
-      defaultColor: false,
-      meta: {
-        __raw: options.meta
-      }
-    };
-    if (lang === "ts-type" || lang === "typescript-type") {
-      lang = "typescript";
-      codeToHastOptions.grammarContextCode = "let a:";
-    } else if (lang === "vue-html" || lang === "vue-template") {
-      lang = "vue";
-      codeToHastOptions.grammarContextCode = "<template>";
-    }
-    const themesObject = { ...typeof theme === "string" ? { default: theme } : theme || {} };
-    const loadedThemes = shiki2.getLoadedThemes();
-    const loadedLanguages = shiki2.getLoadedLanguages();
-    if (typeof lang === "string" && !loadedLanguages.includes(lang) && !isSpecialLang(lang)) {
-      if (bundledLangs[lang]) {
-        await shiki2.loadLanguage(bundledLangs[lang]);
-      } else {
-        {
-          console.warn(`[@nuxtjs/mdc] Language "${lang}" is not loaded to the Shiki highlighter, fallback to plain text. Add the language to "mdc.highlight.langs" to fix this.`);
-        }
-        lang = "text";
-      }
-    }
-    for (const [color, theme2] of Object.entries(themesObject)) {
-      if (typeof theme2 === "string" && !loadedThemes.includes(theme2) && !isSpecialTheme(theme2)) {
-        if (bundledThemes[theme2]) {
-          await shiki2.loadTheme(bundledThemes[theme2]);
-        } else {
-          {
-            console.warn(`[@nuxtjs/mdc] Theme "${theme2}" is not loaded to the Shiki highlighter. Add the theme to "mdc.highlight.themes" to fix this.`);
-          }
-          themesObject[color] = "none";
-        }
-      }
-    }
-    const transformersMap = /* @__PURE__ */ new Map();
-    for (const transformer of baseTransformers) {
-      transformersMap.set(transformer.name || `transformer:${Math.random()}-${transformer.constructor.name}`, transformer);
-    }
-    for (const config of await getConfigs()) {
-      const newTransformers = typeof config.shiki?.transformers === "function" ? await config.shiki?.transformers(code, lang, theme, options) : config.shiki?.transformers || [];
-      for (const transformer of newTransformers) {
-        transformersMap.set(transformer.name || `transformer:${Math.random()}-${transformer.constructor.name}`, transformer);
-      }
-    }
-    const root = shiki2.codeToHast(code.trimEnd(), {
-      lang,
-      ...codeToHastOptions,
-      themes: themesObject,
-      transformers: [
-        ...transformersMap.values(),
-        {
-          name: "mdc:highlight",
-          line(node, line) {
-            if (options.highlights?.includes(line))
-              addClassToHast(node, "highlight");
-            node.properties.line = line;
-          }
-        },
-        {
-          name: "mdc:newline",
-          line(node) {
-            if (code?.includes("\n")) {
-              if (node.children.length === 0 || node.children.length === 1 && node.children[0].type === "element" && node.children[0].children.length === 1 && node.children[0].children[0].type === "text" && node.children[0].children[0].value === "") {
-                node.children = [{
-                  type: "element",
-                  tagName: "span",
-                  properties: {
-                    emptyLinePlaceholder: true
-                  },
-                  children: [{ type: "text", value: "\n" }]
-                }];
-                return;
-              }
-              const last = node.children.at(-1);
-              if (last?.type === "element" && last.tagName === "span") {
-                const text = last.children.at(-1);
-                if (text?.type === "text")
-                  text.value += "\n";
-              }
-            }
-          }
-        }
-      ]
-    });
-    const preEl = root.children[0];
-    const codeEl = preEl.children[0];
-    const wrapperStyle = shikiOptions?.wrapperStyle;
-    preEl.properties.style = wrapperStyle ? typeof wrapperStyle === "string" ? wrapperStyle : preEl.properties.style : "";
-    const styles = [];
-    Object.keys(themesObject).forEach((color) => {
-      const colorScheme = color !== "default" ? `.${color}` : "";
-      styles.push(
-        wrapperStyle ? `${colorScheme} .shiki,` : "",
-        `html .${color} .shiki span {`,
-        `color: var(--shiki-${color});`,
-        `background: var(--shiki-${color}-bg);`,
-        `font-style: var(--shiki-${color}-font-style);`,
-        `font-weight: var(--shiki-${color}-font-weight);`,
-        `text-decoration: var(--shiki-${color}-text-decoration);`,
-        "}"
-      );
-      styles.push(
-        `html${colorScheme} .shiki span {`,
-        `color: var(--shiki-${color});`,
-        `background: var(--shiki-${color}-bg);`,
-        `font-style: var(--shiki-${color}-font-style);`,
-        `font-weight: var(--shiki-${color}-font-weight);`,
-        `text-decoration: var(--shiki-${color}-text-decoration);`,
-        "}"
-      );
-    });
-    return {
-      tree: codeEl.children,
-      className: Array.isArray(preEl.properties.class) ? preEl.properties.class.join(" ") : preEl.properties.class,
-      inlineStyle: preEl.properties.style,
-      style: styles.join("")
-    };
-  };
-  return highlighter;
-}
-
-const bundledLangs = {
-"javascript": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/javascript.mjs').then(r => r.default || r),
-"js": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/javascript.mjs').then(r => r.default || r),
-"cjs": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/javascript.mjs').then(r => r.default || r),
-"mjs": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/javascript.mjs').then(r => r.default || r),
-"jsx": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/jsx.mjs').then(r => r.default || r),
-"json": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/json.mjs').then(r => r.default || r),
-"typescript": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/typescript.mjs').then(r => r.default || r),
-"ts": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/typescript.mjs').then(r => r.default || r),
-"cts": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/typescript.mjs').then(r => r.default || r),
-"mts": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/typescript.mjs').then(r => r.default || r),
-"tsx": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/tsx.mjs').then(r => r.default || r),
-"vue": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/vue.mjs').then(r => r.default || r),
-"css": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/css.mjs').then(r => r.default || r),
-"html": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/html.mjs').then(r => r.default || r),
-"shellscript": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/shellscript.mjs').then(r => r.default || r),
-"bash": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/shellscript.mjs').then(r => r.default || r),
-"sh": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/shellscript.mjs').then(r => r.default || r),
-"shell": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/shellscript.mjs').then(r => r.default || r),
-"zsh": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/shellscript.mjs').then(r => r.default || r),
-"markdown": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/markdown.mjs').then(r => r.default || r),
-"md": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/markdown.mjs').then(r => r.default || r),
-"mdc": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/mdc.mjs').then(r => r.default || r),
-"yaml": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/yaml.mjs').then(r => r.default || r),
-"yml": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/langs/dist/yaml.mjs').then(r => r.default || r),
-};
-const bundledThemes = {
-"material-theme-lighter": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/themes/dist/material-theme-lighter.mjs').then(r => r.default || r),
-"material-theme": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/themes/dist/material-theme.mjs').then(r => r.default || r),
-"material-theme-palenight": () => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/@shikijs/themes/dist/material-theme-palenight.mjs').then(r => r.default || r),
-};
-const options = {};
-const engine = createOnigurumaEngine(() => import('file:///Users/jldev/Projects/3-vps/obscurachat/node_modules/shiki/dist/wasm.mjs'));
-const highlighter = createShikiHighlighter({ bundledLangs, bundledThemes, options, getMdcConfigs, engine });
-
-const mdcHighlighter = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-  __proto__: null,
-  createShikiHighlighter: createShikiHighlighter,
-  default: highlighter
 }, Symbol.toStringTag, { value: 'Module' }));
 
 function renderPayloadResponse(ssrContext) {

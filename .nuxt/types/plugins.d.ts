@@ -10,7 +10,6 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/nuxt/dist/head/runtime/plugins/unhead.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/pages/runtime/plugins/router.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/browser-devtools-timing.client.js")> &
-  InjectionType<typeof import("../../node_modules/@nuxt/content/dist/runtime/plugins/websocket.dev.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/dev-server-logs.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/navigation-repaint.client.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/check-outdated-build.client.js")> &

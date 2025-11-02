@@ -1,1 +1,0 @@
-export { default } from "/Users/jldev/Projects/3-vps/obscurachat/node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue"

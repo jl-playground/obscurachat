@@ -12,15 +12,6 @@ declare module "nitropack/types" {
     '/api/_nuxt_icon/:collection': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/icon/dist/runtime/server/api').default>>>>
     }
-    '/api/_mdc/highlight': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/mdc/dist/runtime/highlighter/event-handler').default>>>>
-    }
-    '/__nuxt_content/:collection/sql_dump.txt': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/presets/node/database-handler').default>>>>
-    }
-    '/__nuxt_content/:collection/query': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/api/query.post').default>>>>
-    }
     '/_ipx/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/image/dist/runtime/ipx').default>>>>
     }
