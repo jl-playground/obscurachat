@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  IMAGE: jl-playground/obscurachat:${{ github.sha }}
+  IMAGE: jl115/obscurachat:${{ github.sha }}
   CONFIG_PATH: ./k8s
   KUBERNETES_NAMESPACE: obscuramatch
   APP_NAME: obscuramatch
