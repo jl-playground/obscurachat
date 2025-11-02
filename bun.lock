@@ -10,6 +10,7 @@
         "@nuxt/ui": "^4.1.0",
         "@nuxtjs/i18n": "^10.2.0",
         "nuxt": "^4.2.0",
+        "ofetch": "^1.4.1",
       },
       "devDependencies": {
         "@nuxt/eslint": "^1.9.0",

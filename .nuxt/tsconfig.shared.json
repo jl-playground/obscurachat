@@ -19,9 +19,6 @@
       "consola": [
         "../node_modules/consola"
       ],
-      "ofetch": [
-        "../node_modules/ofetch"
-      ],
       "@unhead/vue": [
         "../node_modules/@unhead/vue"
       ],
@@ -156,7 +153,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/dev"
+        "./manifest/meta/749c0570-bd84-4465-9676-4e7c32a8121e"
       ],
       "#build": [
         "."

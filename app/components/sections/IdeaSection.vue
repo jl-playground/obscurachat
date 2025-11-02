@@ -1,14 +1,15 @@
 <template>
-  <section
-    id="philosophy"
-    class="py-24 md:py-32"
-  >
+  <section id="philosophy" class="py-24 md:py-32">
     <UContainer class="grid md:grid-cols-2 gap-12 items-center">
       <div>
         <div
           class="w-full h-80 rounded-lg bg-gray-200 dark:bg-gray-800 flex items-center justify-center border border-gray-300 dark:border-gray-700"
         >
-          <span class="text-gray-400">(Abstract "silhouette" visual)</span>
+          <img
+            src="/images/idea-silhouette.png"
+            alt="Abstract silhouette visual"
+            class="w-full h-full object-cover"
+          />
         </div>
       </div>
       <div class="max-w-xl">

@@ -1,11 +1,8 @@
 <template>
-  <section
-    id="how-it-works"
-    class="py-24 bg-gray-50 dark:bg-gray-900"
-  >
+  <section id="how-it-works" class="py-24">
     <UContainer>
       <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold">
+        <h2 class="text-3xl md:text-4xl font-bold dark:text-primary-500">
           {{ $t("how_it_works.title") }}
         </h2>
       </div>
@@ -46,7 +43,7 @@
 
         <UCard>
           <template #header>
-            <h3 class="text-lg font-bold text-accent-500">
+            <h3 class="text-lg font-bold text-primary-500">
               {{ $t("how_it_works.step4_title") }}
             </h3>
           </template>

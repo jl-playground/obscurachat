@@ -40,17 +40,17 @@ onMounted(() => {
   const userLang = navigator?.language || navigator?.userLanguage;
   const browserLanguage = userLang?.split("-")[0] || "en";
 
-  const langCookie = useCookie("obscura_i18n_redirected", {
-    path: "/", // ensure it’s accessible site-wide
-  });
+  const langCookie = useCookie("obscura_i18n_redirected", { path: "/" });
 
   langCookie.value = browserLanguage;
+
+  document.documentElement.lang = browserLanguage;
 });
 </script>
 
 <template>
   <div class="antialiased">
-    <HeaderComponent />
+    <HeaderComponent class="cursor-pointer" />
     <NuxtPage />
     <FooterComponent />
   </div>

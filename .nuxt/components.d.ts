@@ -17,7 +17,6 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 export const AppLogo: typeof import("../app/components/AppLogo.vue")['default']
 export const FooterComponent: typeof import("../app/components/FooterComponent.vue")['default']
 export const HeaderComponent: typeof import("../app/components/HeaderComponent.vue")['default']
-export const TemplateMenu: typeof import("../app/components/TemplateMenu.vue")['default']
 export const SectionsFeatureSection: typeof import("../app/components/sections/FeatureSection.vue")['default']
 export const SectionsIdeaSection: typeof import("../app/components/sections/IdeaSection.vue")['default']
 export const SectionsLandingSection: typeof import("../app/components/sections/LandingSection.vue")['default']
@@ -275,7 +274,6 @@ export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components
 export const LazyAppLogo: LazyComponent<typeof import("../app/components/AppLogo.vue")['default']>
 export const LazyFooterComponent: LazyComponent<typeof import("../app/components/FooterComponent.vue")['default']>
 export const LazyHeaderComponent: LazyComponent<typeof import("../app/components/HeaderComponent.vue")['default']>
-export const LazyTemplateMenu: LazyComponent<typeof import("../app/components/TemplateMenu.vue")['default']>
 export const LazySectionsFeatureSection: LazyComponent<typeof import("../app/components/sections/FeatureSection.vue")['default']>
 export const LazySectionsIdeaSection: LazyComponent<typeof import("../app/components/sections/IdeaSection.vue")['default']>
 export const LazySectionsLandingSection: LazyComponent<typeof import("../app/components/sections/LandingSection.vue")['default']>

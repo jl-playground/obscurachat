@@ -49,4 +49,3 @@ export { toastMaxInjectionKey, useToast } from '../node_modules/@nuxt/ui/dist/ru
 export { useColorMode } from '../node_modules/@nuxtjs/color-mode/dist/runtime/composables';
 export { useImage } from '../node_modules/@nuxt/image/dist/runtime/composables';
 export { useI18n } from 'vue-i18n';
-export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';

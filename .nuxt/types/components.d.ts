@@ -17,7 +17,6 @@ interface _GlobalComponents {
   'AppLogo': typeof import("../../app/components/AppLogo.vue")['default']
   'FooterComponent': typeof import("../../app/components/FooterComponent.vue")['default']
   'HeaderComponent': typeof import("../../app/components/HeaderComponent.vue")['default']
-  'TemplateMenu': typeof import("../../app/components/TemplateMenu.vue")['default']
   'SectionsFeatureSection': typeof import("../../app/components/sections/FeatureSection.vue")['default']
   'SectionsIdeaSection': typeof import("../../app/components/sections/IdeaSection.vue")['default']
   'SectionsLandingSection': typeof import("../../app/components/sections/LandingSection.vue")['default']
@@ -275,7 +274,6 @@ interface _GlobalComponents {
   'LazyAppLogo': LazyComponent<typeof import("../../app/components/AppLogo.vue")['default']>
   'LazyFooterComponent': LazyComponent<typeof import("../../app/components/FooterComponent.vue")['default']>
   'LazyHeaderComponent': LazyComponent<typeof import("../../app/components/HeaderComponent.vue")['default']>
-  'LazyTemplateMenu': LazyComponent<typeof import("../../app/components/TemplateMenu.vue")['default']>
   'LazySectionsFeatureSection': LazyComponent<typeof import("../../app/components/sections/FeatureSection.vue")['default']>
   'LazySectionsIdeaSection': LazyComponent<typeof import("../../app/components/sections/IdeaSection.vue")['default']>
   'LazySectionsLandingSection': LazyComponent<typeof import("../../app/components/sections/LandingSection.vue")['default']>
