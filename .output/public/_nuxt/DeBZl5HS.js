@@ -1,0 +1,1 @@
+const i=()=>{const t={threshold:.1,rootMargin:"0px 0px -50px 0px"};return{observeElements:(o,n)=>{const c=document.querySelectorAll(o),r=new IntersectionObserver(e=>{e.forEach(s=>{s.isIntersecting&&(s.target.classList.add("animate-fade-in"),n?.())})},t);return c.forEach(e=>r.observe(e)),r}}};export{i as u};
