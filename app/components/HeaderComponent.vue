@@ -49,11 +49,27 @@
           >
             {{ $t("nav.features") || "Features" }}
           </UButton>
-          <UButton
-            variant="ghost"
-            color="gray"
-            size="md"
-            to="/blog"
+         <UButton
+             variant="ghost"
+             color="gray"
+             size="md"
+             to="/faq"
+             class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"
+             aria-label="Navigate to FAQ page"
+           >
+             FAQ
+           </UButton>
+           <UButton
+             variant="ghost"
+             color="gray"
+             size="md"
+             to="/about"
+             class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"
+             aria-label="Navigate to about page"
+           >
+             About
+           </UButton>
+           <UButton
             class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"
             aria-label="Navigate to blog page"
           >
@@ -118,7 +134,7 @@
 
     <!-- Mobile Menu -->
     <transition
-      name="slide"
+      name="slide-down"
       @enter="onMenuEnter"
       @leave="onMenuLeave"
     >
@@ -142,15 +158,29 @@
           >
             {{ $t("nav.philosophy") }}
           </NuxtLink>
-          <NuxtLink
-            to="/features"
-            class="block px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            @click="mobileMenuOpen = false"
-          >
-            {{ $t("nav.features") || "Features" }}
-          </NuxtLink>
-          <NuxtLink
-            to="/blog"
+           <NuxtLink
+             to="/features"
+             class="block px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+             @click="mobileMenuOpen = false"
+           >
+             {{ $t("nav.features") || "Features" }}
+           </NuxtLink>
+           <NuxtLink
+             to="/faq"
+             class="block px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+             @click="mobileMenuOpen = false"
+           >
+             FAQ
+           </NuxtLink>
+           <NuxtLink
+             to="/about"
+             class="block px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+             @click="mobileMenuOpen = false"
+           >
+             About Us
+           </NuxtLink>
+           <NuxtLink
+             to="/blog"
             class="block px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             @click="mobileMenuOpen = false"
           >
@@ -215,14 +245,32 @@ const onMenuLeave = (el: Element) => {
 </script>
 
 <style scoped>
-.slide-enter-active,
-.slide-leave-active {
-  transition: max-height 0.3s ease;
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
-.slide-enter-from,
-.slide-leave-to {
+.slide-down-enter-from,
+.slide-down-leave-to {
+  opacity: 0;
   max-height: 0;
+  transform: translateY(-10px);
+}
+
+.slide-down-enter-to,
+.slide-down-leave-from {
+  opacity: 1;
+  max-height: 500px;
+  transform: translateY(0);
+}
+
+/* Enhanced button hover effects */
+:deep(button) {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:deep(button:hover) {
+  transform: translateY(-2px);
 }
 </style>

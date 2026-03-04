@@ -2,6 +2,11 @@
   <footer class="bg-gradient-to-r from-charcoal to-gray-900 dark:from-gray-950 dark:to-gray-900 text-off-white border-t border-gray-800">
     <UContainer>
       <div class="py-12 md:py-16">
+        <!-- Newsletter Section -->
+        <div class="mb-12">
+          <NewsletterSignup />
+        </div>
+
         <!-- Main footer content -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <!-- Brand section -->
@@ -96,16 +101,34 @@
                 </NuxtLink>
               </li>
               <li>
-                <NuxtLink
-                  to="/blog"
-                  class="text-gray-400 hover:text-primary-400 transition-colors duration-200"
-                  aria-label="Go to blog page"
-                >
-                  Blog
-                </NuxtLink>
-              </li>
-            </ul>
-          </nav>
+               <NuxtLink
+                   to="/blog"
+                   class="text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                   aria-label="Go to blog page"
+                 >
+                   Blog
+                 </NuxtLink>
+               </li>
+               <li>
+                 <NuxtLink
+                   to="/faq"
+                   class="text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                   aria-label="Go to FAQ page"
+                 >
+                   FAQ
+                 </NuxtLink>
+               </li>
+               <li>
+                 <NuxtLink
+                   to="/about"
+                   class="text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                   aria-label="Go to about page"
+                 >
+                   About
+                 </NuxtLink>
+               </li>
+             </ul>
+           </nav>
 
           <!-- Support -->
           <nav aria-labelledby="footer-support-title">
@@ -135,17 +158,26 @@
                 </a>
               </li>
               <li>
-                <a
-                  href="/terms"
-                  class="text-gray-400 hover:text-primary-400 transition-colors duration-200"
-                  aria-label="Read our terms of service"
-                >
-                  Terms of Service
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+               <a
+                   href="/terms"
+                   class="text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                   aria-label="Read our terms of service"
+                 >
+                   Terms of Service
+                 </a>
+               </li>
+               <li>
+                 <NuxtLink
+                   to="/safety"
+                   class="text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                   aria-label="Go to safety tips page"
+                 >
+                   Safety Tips
+                 </NuxtLink>
+               </li>
+             </ul>
+           </nav>
+         </div>
 
         <!-- Divider -->
         <div class="border-t border-gray-800" />
