@@ -1,9 +1,12 @@
 <template>
-  <section id="landing" class="relative py-20 md:py-32 lg:py-40 overflow-hidden">
+  <section
+    id="landing"
+    class="relative py-20 md:py-32 lg:py-40 overflow-hidden"
+  >
     <!-- Gradient background decoration -->
     <div class="absolute inset-0 -z-10">
-      <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary-100 to-transparent rounded-full blur-3xl opacity-20 dark:opacity-10"></div>
-      <div class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-soft-coral/20 to-transparent rounded-full blur-3xl opacity-20 dark:opacity-10"></div>
+      <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary-100 to-transparent rounded-full blur-3xl opacity-20 dark:opacity-10" />
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-soft-coral/20 to-transparent rounded-full blur-3xl opacity-20 dark:opacity-10" />
     </div>
 
     <UContainer class="text-center max-w-4xl relative z-10">
@@ -27,15 +30,15 @@
           :label="$t('nav.patreon')"
           variant="solid"
           size="xl"
-          @click="patreonNavigator"
           class="font-bold cursor-pointer bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-8 md:px-10 py-3 md:py-4 rounded-lg transition-all duration-300 w-full sm:w-auto"
+          @click="patreonNavigator"
         />
         <UButton
           variant="outline"
           size="xl"
           label="Learn More"
-          @click="scrollToFeatures"
           class="font-bold cursor-pointer border-2 border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 px-8 md:px-10 py-3 md:py-4 rounded-lg transition-all duration-300 w-full sm:w-auto"
+          @click="scrollToFeatures"
         />
       </div>
 
@@ -51,13 +54,13 @@
 
 <script setup lang="ts">
 const patreonNavigator = () => {
-  window.open("https://www.patreon.com/obscurachat", "_blank");
-};
+  window.open('https://www.patreon.com/obscurachat', '_blank')
+}
 
 const scrollToFeatures = () => {
-  const element = document.getElementById("how-it-works");
+  const element = document.getElementById('how-it-works')
   if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
+    element.scrollIntoView({ behavior: 'smooth' })
   }
-};
+}
 </script>

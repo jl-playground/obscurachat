@@ -42,7 +42,10 @@
       font-size="140.6"
       transform="translate(704 450)"
     >
-      <tspan x="0" y="77"><![CDATA[Obscura]]></tspan>
+      <tspan
+        x="0"
+        y="77"
+      ><![CDATA[Obscura]]></tspan>
     </text>
   </svg>
 </template>

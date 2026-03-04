@@ -5,15 +5,18 @@
     <UContainer class="flex items-center justify-between h-16 md:h-20">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <AppLogo 
-          @click="headerClicked"
+        <AppLogo
           class="cursor-pointer hover:opacity-80 transition-opacity duration-200"
           aria-label="Obscura Chat Logo - Click to go home"
+          @click="headerClicked"
         />
       </div>
 
       <!-- Navigation -->
-      <nav class="flex items-center space-x-1 md:space-x-8 ml-auto" aria-label="Main navigation">
+      <nav
+        class="flex items-center space-x-1 md:space-x-8 ml-auto"
+        aria-label="Main navigation"
+      >
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-1">
           <UButton
@@ -70,22 +73,32 @@
 
         <!-- Dark Mode Toggle -->
         <button
-          @click="toggleDarkMode"
           :aria-label="`Switch to ${isDark ? 'light' : 'dark'} mode`"
           class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          @click="toggleDarkMode"
         >
-          <Icon v-if="isDark" name="lucide:sun" size="20" class="text-yellow-500" />
-          <Icon v-else name="lucide:moon" size="20" class="text-gray-700" />
+          <Icon
+            v-if="isDark"
+            name="lucide:sun"
+            size="20"
+            class="text-yellow-500"
+          />
+          <Icon
+            v-else
+            name="lucide:moon"
+            size="20"
+            class="text-gray-700"
+          />
         </button>
 
         <!-- Mobile Menu Button -->
         <button
-          @click="mobileMenuOpen = !mobileMenuOpen"
           aria-label="Toggle mobile menu"
           class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          @click="mobileMenuOpen = !mobileMenuOpen"
         >
-          <Icon 
-            :name="mobileMenuOpen ? 'lucide:x' : 'lucide:menu'" 
+          <Icon
+            :name="mobileMenuOpen ? 'lucide:x' : 'lucide:menu'"
             size="24"
             class="text-gray-700 dark:text-gray-300"
           />
@@ -96,9 +109,9 @@
           :label="$t('nav.patreon')"
           variant="solid"
           size="md"
-          @click="patreonNavigator"
           class="font-bold bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white cursor-pointer transition-all duration-300 whitespace-nowrap"
           aria-label="Open Patreon link"
+          @click="patreonNavigator"
         />
       </nav>
     </UContainer>
@@ -157,48 +170,48 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { useRouter } from "#app";
+import { ref } from 'vue'
+import { useRouter } from '#app'
 
-const router = useRouter();
-const mobileMenuOpen = ref(false);
-const isDark = ref(false);
+const router = useRouter()
+const mobileMenuOpen = ref(false)
+const isDark = ref(false)
 
 // Initialize dark mode state
-if (process.client) {
-  isDark.value = document.documentElement.classList.contains("dark");
+if (import.meta.client) {
+  isDark.value = document.documentElement.classList.contains('dark')
 }
 
 const toggleDarkMode = () => {
-  if (process.client) {
-    document.documentElement.classList.toggle("dark");
-    isDark.value = !isDark.value;
+  if (import.meta.client) {
+    document.documentElement.classList.toggle('dark')
+    isDark.value = !isDark.value
     // Optional: Save preference to localStorage
     localStorage.setItem(
-      "theme-preference",
-      isDark.value ? "dark" : "light"
-    );
+      'theme-preference',
+      isDark.value ? 'dark' : 'light'
+    )
   }
-};
+}
 
 const patreonNavigator = () => {
-  window.open("https://www.patreon.com/obscurachat", "_blank");
-};
+  window.open('https://www.patreon.com/obscurachat', '_blank')
+}
 
 const headerClicked = async () => {
-  mobileMenuOpen.value = false;
-  router.push({ hash: "#landing" });
-};
+  mobileMenuOpen.value = false
+  router.push({ hash: '#landing' })
+}
 
 const onMenuEnter = (el: Element) => {
-  const element = el as HTMLElement;
-  element.style.maxHeight = element.scrollHeight + "px";
-};
+  const element = el as HTMLElement
+  element.style.maxHeight = element.scrollHeight + 'px'
+}
 
 const onMenuLeave = (el: Element) => {
-  const element = el as HTMLElement;
-  element.style.maxHeight = "0";
-};
+  const element = el as HTMLElement
+  element.style.maxHeight = '0'
+}
 </script>
 
 <style scoped>
