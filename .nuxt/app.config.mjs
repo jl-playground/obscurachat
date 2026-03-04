@@ -265,6 +265,6 @@ if (import.meta.dev && !import.meta.nitro && import.meta.hot) {
 }
 /** client-end **/
 
-import cfg0 from "/Users/jldev/Projects/3-vps/obscurachat/app/app.config.ts"
+import cfg0 from "/tmp/obscurachat/app/app.config.ts"
 
 export default /*@__PURE__*/ defuFn(cfg0, inlineConfig)

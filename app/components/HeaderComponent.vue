@@ -1,39 +1,47 @@
 <template>
   <header
-    class="sticky top-0 z-50 bg-off-white/75 dark:bg-charcoal/75 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800"
+    class="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-all duration-300"
   >
-    <UContainer class="flex items-center justify-between h-16">
-      <AppLogo @click="headerClicked" />
+    <UContainer class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <AppLogo 
+          @click="headerClicked"
+          class="cursor-pointer hover:opacity-80 transition-opacity duration-200"
+        />
+      </div>
 
-      <div class="flex items-center space-x-4">
-        <nav class="hidden md:flex items-center space-x-6">
-          <ULink
+      <!-- Navigation -->
+      <div class="flex items-center space-x-1 md:space-x-8 ml-auto">
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-1">
+          <UButton
+            variant="ghost"
+            color="gray"
+            size="md"
             :to="{ hash: '#how-it-works' }"
-            class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-500"
+            class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"
           >
             {{ $t("nav.how") }}
-          </ULink>
-          <ULink
+          </UButton>
+          <UButton
+            variant="ghost"
+            color="gray"
+            size="md"
             :to="{ hash: '#philosophy' }"
-            class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-500"
+            class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"
           >
             {{ $t("nav.philosophy") }}
-          </ULink>
+          </UButton>
         </nav>
 
-        <!-- <UButton
-          :label="$t('nav.waitlist')"
-          variant="solid"
-          size="sm"
-          class="font-bold bg-primary-600 cursor-pointer"
-          @click="openSignUp"
-        /> -->
+        <!-- CTA Button -->
         <UButton
           :label="$t('nav.patreon')"
           variant="solid"
-          size="sm"
-          class="font-bold bg-primary-600 cursor-pointer"
+          size="md"
           @click="patreonNavigator"
+          class="font-bold bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white cursor-pointer transition-all duration-300 whitespace-nowrap"
         />
       </div>
     </UContainer>
@@ -43,13 +51,11 @@
 <script setup lang="ts">
 import { useRouter } from "#app";
 const router = useRouter();
-// No script logic needed for this component as of now
+
 const patreonNavigator = () => {
   window.open("https://www.patreon.com/obscurachat", "_blank");
 };
-const openSignUp = () => {
-  console.log("\x1b[33m%s\x1b[0m", "sign up clicked --------------------");
-};
+
 const headerClicked = async () => {
   router.push({ hash: "#landing" });
 };
