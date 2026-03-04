@@ -3,5 +3,6 @@
     <SectionsLandingSection />
     <SectionsFeatureSection />
     <SectionsIdeaSection />
+    <TestimonialsCarousel />
   </main>
 </template>
