@@ -1,0 +1,193 @@
+<template>
+  <div class="min-h-screen bg-gradient-to-b from-off-white to-white">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-primary-600 to-soft-coral text-white py-16 md:py-24">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">About Obscurachat</h1>
+        <p class="text-white/90 text-lg md:text-xl">
+          A mission to connect people authentically while protecting their privacy
+        </p>
+      </div>
+    </div>
+
+    <!-- Story Section -->
+    <div class="max-w-4xl mx-auto px-4 py-16 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+        <div class="scroll-animate">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Our Story</h2>
+          <p class="text-gray-600 mb-4 text-lg">
+            Obscurachat was founded in 2020 with a simple vision: to create a dating platform where people could be themselves without fear of judgment or privacy breach.
+          </p>
+          <p class="text-gray-600 mb-4 text-lg">
+            The founders believed that online dating should be both safe and authentic. Too many platforms either compromised on privacy or on genuine connections. We set out to prove that you don't have to choose.
+          </p>
+          <p class="text-gray-600 text-lg">
+            Today, Obscurachat serves millions of users across the globe, facilitating real connections while maintaining the highest standards of privacy and security.
+          </p>
+        </div>
+        <div class="scroll-animate">
+          <div class="bg-gradient-to-br from-primary-600 to-soft-coral rounded-lg h-96 flex items-center justify-center">
+            <div class="text-white text-center">
+              <svg class="w-24 h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M9 19.5a9.75 9.75 0 003-15" />
+              </svg>
+              <p class="text-xl font-semibold">Since 2020</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values Section -->
+      <div class="py-16 md:py-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">Our Values</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center scroll-animate">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6">
+              <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Privacy First</h3>
+            <p class="text-gray-600">
+              Your data is yours. We never sell, trade, or share your information. Our encryption ensures complete privacy.
+            </p>
+          </div>
+
+          <div class="text-center scroll-animate">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+              <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Authentic Connections</h3>
+            <p class="text-gray-600">
+              Real people, real conversations. We verify users and encourage genuine interactions that lead to meaningful relationships.
+            </p>
+          </div>
+
+          <div class="text-center scroll-animate">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-6">
+              <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Safety & Trust</h3>
+            <p class="text-gray-600">
+              24/7 moderation, instant reporting, and verified profiles. Your safety is our responsibility.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Section -->
+      <div class="py-16 md:py-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">Our Team</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <TeamMember
+            v-for="member in teamMembers"
+            :key="member.id"
+            :name="member.name"
+            :role="member.role"
+            :bio="member.bio"
+          />
+        </div>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="bg-gradient-to-r from-primary-600 to-soft-coral rounded-lg p-12 my-16 scroll-animate">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-white text-center">
+          <div>
+            <p class="text-4xl font-bold mb-2">45K+</p>
+            <p class="text-white/90">Active Users</p>
+          </div>
+          <div>
+            <p class="text-4xl font-bold mb-2">128K+</p>
+            <p class="text-white/90">Connections Made</p>
+          </div>
+          <div>
+            <p class="text-4xl font-bold mb-2">32K+</p>
+            <p class="text-white/90">Success Stories</p>
+          </div>
+          <div>
+            <p class="text-4xl font-bold mb-2">150+</p>
+            <p class="text-white/90">Countries Served</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="text-center py-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Join Our Community</h2>
+        <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+          Be part of a movement that's changing the way people connect. Safe, private, and authentic.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <NuxtLink
+            to="/"
+            class="inline-block bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+          >
+            Get Started
+          </NuxtLink>
+          <NuxtLink
+            to="/contact"
+            class="inline-block bg-white text-primary-600 border-2 border-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors"
+          >
+            Contact Us
+          </NuxtLink>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { useScrollAnimation } from '~/composables/useScrollAnimation'
+
+definePageMeta({
+  layout: 'default'
+})
+
+useHead({
+  title: 'About Us - Obscurachat',
+  meta: [
+    {
+      name: 'description',
+      content: 'Learn about Obscurachat - A secure and anonymous dating platform built on privacy and authenticity'
+    }
+  ]
+})
+
+const teamMembers = [
+  {
+    id: 1,
+    name: 'Alex Chen',
+    role: 'Founder & CEO',
+    bio: 'Privacy advocate with 10+ years in secure communications'
+  },
+  {
+    id: 2,
+    name: 'Jordan Smith',
+    role: 'CTO',
+    bio: 'Full-stack engineer specializing in encryption and security'
+  },
+  {
+    id: 3,
+    name: 'Taylor Rodriguez',
+    role: 'Head of Safety',
+    bio: 'Community safety expert dedicated to user protection'
+  },
+  {
+    id: 4,
+    name: 'Morgan Kim',
+    role: 'Head of Product',
+    bio: 'Product strategist passionate about user experience'
+  }
+]
+
+const { observeElements } = useScrollAnimation()
+
+onMounted(() => {
+  observeElements('.scroll-animate')
+})
+</script>

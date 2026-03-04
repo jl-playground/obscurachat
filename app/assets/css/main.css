@@ -1,7 +1,11 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-/* Apply our brand fonts */
+/* ============================================
+   BASE LAYOUT & TYPOGRAPHY
+   ============================================ */
+
+/* Brand fonts */
 h1,
 h2,
 h3,
@@ -9,6 +13,7 @@ h4,
 h5,
 h6 {
   font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 
 body,
@@ -21,8 +26,12 @@ a {
   font-family: "Inter", sans-serif;
 }
 
+/* ============================================
+   COLOR THEME CONFIGURATION
+   ============================================ */
+
 @theme static {
-  /* Override default green color */
+  /* Purple Primary Color Palette */
   --color-primary-50: #430f8a;
   --color-primary-100: #651dbf;
   --color-primary-200: #7623d9;
@@ -35,6 +44,8 @@ a {
   --color-primary-900: #f7ebff;
   --color-primary-950: #fbf5ff;
 
+  /* Background Primary (Deep Purple) */
+  --bg-primary: #1e1e2f;
   --bg-primary-50: #f3e8ff;
   --bg-primary-100: #e9d5ff;
   --bg-primary-200: #d8b4fe;
@@ -47,9 +58,7 @@ a {
   --bg-primary-900: #3b0764;
   --bg-primary-950: #210338;
 
-  --bg-primary: #1e1e2f;
-
-  /* Override default gray color */
+  /* Neutral Gray Color Palette */
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;
   --color-gray-200: #e5e7eb;
@@ -62,7 +71,7 @@ a {
   --color-gray-900: #111827;
   --color-gray-950: #030712;
 
-  /* Define new custom color */
+  /* Brand Accent Color (Red) */
   --color-brand-50: #fef2f2;
   --color-brand-100: #fee2e2;
   --color-brand-200: #fecaca;
@@ -75,13 +84,17 @@ a {
   --color-brand-900: #7f1d1d;
   --color-brand-950: #450a0a;
 
+  /* UI Defaults */
   --ui-primary: #b982ff;
 }
 
+/* ============================================
+   DARK MODE THEME OVERRIDES
+   ============================================ */
+
 .dark {
   @theme dark {
-    /* Override default green color in dark mode */
-
+    /* Inherit primary colors for dark mode */
     --color-primary-50: #430f8a;
     --color-primary-100: #651dbf;
     --color-primary-200: #7623d9;
@@ -93,8 +106,8 @@ a {
     --color-primary-800: #f0dfff;
     --color-primary-900: #f7ebff;
     --color-primary-950: #fbf5ff;
-    /* Define new custom color in dark mode */
 
+    /* Dark background */
     --bg-primary: #1e1e2f;
     --bg-primary-50: #f3e8ff;
     --bg-primary-100: #e9d5ff;
@@ -107,7 +120,8 @@ a {
     --bg-primary-800: #581c87;
     --bg-primary-900: #3b0764;
     --bg-primary-950: #210338;
-    /* Override default gray color */
+
+    /* Dark gray palette */
     --color-gray-50: #f9fafb;
     --color-gray-100: #f3f4f6;
     --color-gray-200: #e5e7eb;
@@ -120,18 +134,27 @@ a {
     --color-gray-900: #111827;
     --color-gray-950: #030712;
 
-    --text-primary-50: #ffffff;
-    --text-primary-100: #f0f0f0;
-    --text-primary-200: #e0e0e0;
-    --text-primary-300: #d0d0d0;
-    --text-primary-400: #c0c0c0;
-    --text-primary-500: #b0b0b0;
-    --text-primary-600: #a0a0a0;
-    --text-primary-700: #909090;
-    --text-primary-800: #808080;
-    --text-primary-900: #707070;
-    --text-primary-950: #606060;
-
+    /* UI background for dark mode */
     --ui-bg: #1d1229;
   }
+}
+
+/* ============================================
+   SMOOTH SCROLL BEHAVIOR
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   ACCESSIBILITY FOCUS STATES
+   ============================================ */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgb(185, 130, 255, 0.3);
 }
